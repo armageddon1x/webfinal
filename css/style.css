@@ -1,11 +1,21 @@
-*{padding: 0;margin: 0;
-}
+*{padding: 0;margin: 0;color: white;font-style: helvetica;}
 #battle{}
 #field{height: 75vh;background: black;}
 #menu{height: 25vh;background: rgb(40,40,40);}
 
-#test{height: 400px;background: red;width: 20%;display: inline-block;}
-#player{height: 100px;background: green;width: 5%;display: inline-block;}
+#test{
+	height: 400px;
+	background: red;
+	width: 20%;
+	display: inline-block;
+}
+#player{
+	height: 100px;
+	background: green;
+	width: 5%;
+	display: inline-block;
+	float: right;
+}
 
 #options{
 	width: 20%;
@@ -45,4 +55,24 @@ nav{display: inline-block;}
 	background: black;
 	color: green;
 	border-bottom: 1px solid gray;
+}
+
+#bars{display: inline-block;}
+#HP_bar, #MP_bar{}
+#HP_ally, #HP_ally_max{display: inline-block;}
+#MP_ally, #MP_ally_max{display: inline-block;}
+
+#progressBar {
+    width: 400px;
+    height: 10px;
+    border: 2px solid #2F06FF;
+    background-color: black;
+    border-radius: 10px;
+}
+#progressBar div {
+    height: 100%;
+    color: #fff;
+    width: 0;
+    background-color: #33AAFF;
+    border-radius: 10px;
 }
