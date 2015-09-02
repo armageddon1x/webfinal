@@ -41,6 +41,15 @@ $(document).ready(function(){
 	var air_mana=5;
 	var earth_mana=5;
 
+	$("#magecraft").click(function(){
+		if (true) {
+			$("#magic").removeClass("none");
+		}
+		$("#magic").click(function(){
+			$("#magic").addClass("none");
+		});
+	});
+
 	$("#fire").click(function(){
 		console.log("before attack "+HP_enemy);
 		console.log("mana reserve: "+MP_ally);
@@ -59,7 +68,7 @@ $(document).ready(function(){
 		//update HP and MP meters
 		$("#HP_ally").html(HP_ally);
 		$("#MP_ally").html(MP_ally);
-		progress(MP_ally, $('#progressBar'));
+		progress(MP_ally, $('#MP_ally_progress_bar'));
 
 		//check to see if enemy has zero HP or less
 		if (HP_enemy<0){
@@ -74,8 +83,8 @@ $(document).ready(function(){
 	});
 
 	function progress(percent, $element) {
-    var progressBarWidth = percent * $element.width() / 100;
-    $element.find('div').animate({ width: progressBarWidth });
+    var progress_bar_width=percent*$element.width()/100;
+    $element.find('div').animate({width: progress_bar_width});
 }
 
 	//end

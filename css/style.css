@@ -1,4 +1,10 @@
-*{padding: 0;margin: 0;color: white;font-style: helvetica;}
+*{
+	padding: 0;
+	margin: 0;
+	color: white;
+	font-family: helvetica;
+	font-variant: small-caps;
+}
 #battle{}
 #field{height: 75vh;background: black;}
 #menu{height: 25vh;background: rgb(40,40,40);}
@@ -18,9 +24,11 @@
 }
 
 #options{
-	width: 20%;
+	width: 15%;
 	color: rgb(220,220,220);
 	font-size: 16px;
+	float: left;
+	position: fixed;
 }
 nav{display: inline-block;}
 
@@ -28,9 +36,11 @@ nav{display: inline-block;}
 	list-style: none;
 }
 #options>ul>li{
+	padding: 0 20px;
 	padding-top: 10px;
 	padding-bottom: 5px;
 	border-bottom: 1px solid rgb(40,40,40);
+	text-indent: 10px;
 }
 #options>ul>li:hover{
 	background: black;
@@ -39,17 +49,24 @@ nav{display: inline-block;}
 }
 
 #magic{
-	width: 20%;
+	width: 15%;
 	color: rgb(220,220,220);
 	font-size: 16px;
+	float: left;
+	position: relative;
+	z-index: 5;
+	background: black;
 }
+.none{display: none;}
 #magic>ul{
 	list-style: none;
 }
 #magic>ul>li{
+	padding: 0 20px;
 	padding-top: 10px;
 	padding-bottom: 5px;
 	border-bottom: 1px solid rgb(40,40,40);
+	text-indent: 10px;
 }
 #magic>ul>li:hover{
 	background: black;
@@ -57,22 +74,41 @@ nav{display: inline-block;}
 	border-bottom: 1px solid gray;
 }
 
-#bars{display: inline-block;}
+#bars{
+	display: inline-block;
+	float: right;
+	padding-right: 30px;
+}
 #HP_bar, #MP_bar{}
 #HP_ally, #HP_ally_max{display: inline-block;}
 #MP_ally, #MP_ally_max{display: inline-block;}
 
-#progressBar {
+#HP_ally_progress_bar{
+    width: 400px;
+    height: 10px;
+    border: 2px solid #006601;
+    background-color: black;
+    border-radius: 10px;
+}
+#HP_ally_progress_bar div{
+    height: 100%;
+    color: #fff;
+    width: 400px;
+    background-color: #55FD40;
+    border-radius: 10px;
+}
+
+#MP_ally_progress_bar{
     width: 400px;
     height: 10px;
     border: 2px solid #2F06FF;
     background-color: black;
     border-radius: 10px;
 }
-#progressBar div {
+#MP_ally_progress_bar div{
     height: 100%;
     color: #fff;
-    width: 0;
+    width: 400px;
     background-color: #33AAFF;
     border-radius: 10px;
 }
