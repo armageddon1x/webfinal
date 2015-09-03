@@ -5,42 +5,49 @@
 	font-family: helvetica;
 	font-variant: small-caps;
 }
-#battle{}
-#field{height: 75vh;background: black;}
-#menu{height: 25vh;background: rgb(40,40,40);}
+#battle{background: black;}
+#field{height: 80vh;}
+#menu{height: 20vh;background: rgb(25,25,25);}
 
 #test{
-	height: 400px;
-	background: red;
-	width: 20%;
 	display: inline-block;
+	position: absolute;
 }
 #player{
-	height: 100px;
-	background: green;
-	width: 5%;
 	display: inline-block;
 	float: right;
+	position: relative;
+	z-index: 5;
+}
+
+nav{display: inline-block;}
+
+#menu{
+}
+
+#line{
+	border-right: 1px solid white;
+	display: inline-block;
+	height: 20%;
+	position: absolute;
 }
 
 #options{
 	width: 15%;
 	color: rgb(220,220,220);
-	font-size: 16px;
-	float: left;
-	position: fixed;
+	font-size: 20px;
+	float: right;
+	position: absolute;
+	right: 440px;
 }
-nav{display: inline-block;}
-
 #options>ul{
 	list-style: none;
 }
 #options>ul>li{
-	padding: 0 20px;
-	padding-top: 10px;
-	padding-bottom: 5px;
+	padding: 2.4% 20px;
 	border-bottom: 1px solid rgb(40,40,40);
 	text-indent: 10px;
+	background: gray;
 }
 #options>ul>li:hover{
 	background: black;
@@ -51,34 +58,35 @@ nav{display: inline-block;}
 #magic{
 	width: 15%;
 	color: rgb(220,220,220);
-	font-size: 16px;
-	float: left;
-	position: relative;
+	font-size: 20px;
 	z-index: 5;
 	background: black;
+	position: absolute;
+	right: 440px;
 }
 .none{display: none;}
+
 #magic>ul{
 	list-style: none;
 }
 #magic>ul>li{
-	padding: 0 20px;
-	padding-top: 10px;
-	padding-bottom: 5px;
+	padding: 2.4% 20px;
 	border-bottom: 1px solid rgb(40,40,40);
 	text-indent: 10px;
 }
 #magic>ul>li:hover{
 	background: black;
 	color: green;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid white;
 }
 
-#bars{
+#ally_bars{
 	display: inline-block;
 	float: right;
-	padding-right: 30px;
+	position: absolute;
+	right:0;
 }
+
 #HP_bar, #MP_bar{}
 #HP_ally, #HP_ally_max{display: inline-block;}
 #MP_ally, #MP_ally_max{display: inline-block;}
@@ -110,5 +118,46 @@ nav{display: inline-block;}
     color: #fff;
     width: 400px;
     background-color: #33AAFF;
+    border-radius: 10px;
+}
+
+#enemy_bars{
+	display: inline-block;
+	float: left;
+	position: absolute;
+	left: 0;
+}
+
+#HP_bar, #MP_bar{}
+#HP_enemy, #HP_enemy_max{display: inline-block;}
+#MP_enemy, #MP_enemy_max{display: inline-block;}
+
+#HP_enemy_progress_bar{
+    width: 400px;
+    height: 10px;
+    border: 2px solid #660A00;
+    background-color: black;
+    border-radius: 10px;
+}
+#HP_enemy_progress_bar div{
+    height: 100%;
+    color: #fff;
+    width: 400px;
+    background-color: #FD1900;
+    border-radius: 10px;
+}
+
+#MP_enemy_progress_bar{
+    width: 400px;
+    height: 10px;
+    border: 2px solid #660052;
+    background-color: black;
+    border-radius: 10px;
+}
+#MP_enemy_progress_bar div{
+    height: 100%;
+    color: #fff;
+    width: 400px;
+    background-color: #FD00CD;
     border-radius: 10px;
 }

@@ -8,12 +8,39 @@
 	<script type="text/javascript" src="js/function.js"></script>
 </head>
 <body>
+
+	<audio autoplay loop> 
+  	<source src="sounds/bgm.mp3">
+	</audio>
+
 	<div id="battle">
 		<div id="field">
-			<div id="test"></div>
-			<div id="player"></div>
+			<div id="test">
+				<img style="width:100%;margin-top:-100px;" src="images/dragon.png">
+			</div>
+			<div id="player">
+				<img style="height:200px;display:block;margin-left:100px;" src="gifs/ragna.gif">
+				<img style="height:250px;display:block;margin-top:-175px;margin-left:100px;" src="gifs/yuzuriha.gif">
+				<img style="height:300px;display:block;margin-top:-175px;" src="gifs/izanagi.gif">
+				<img style="height:300px;display:block;margin-top:-175px;margin-left:100px;" src="gifs/justice.gif">
+			</div>
 		</div>
 		<div id="menu">
+
+			<!--enemy HP and MP-->
+			<div id="enemy_bars">
+				<div id="HP_bar">
+					<div id="HP_enemy_progress_bar"><div></div></div>
+					<div id="HP_enemy"></div>/<div id="HP_enemy_max"></div>
+				</div>
+				<div id="MP_bar">
+					<div id="MP_enemy_progress_bar"><div></div></div>
+					<div id="MP_enemy"></div>/<div id="MP_enemy_max"></div>
+				</div>
+			</div>
+
+			<div id="line" style="left:420px;"></div>
+			<!--actions-->
 			<nav id="options">
 				<ul>
 					<li>Attack</li>
@@ -22,6 +49,9 @@
 					<li>Run</li>
 				</ul>
 			</nav>
+
+			<div id="line" style="right:420px;"></div>
+			<!--magic-->
 			<nav id="magic" class="none">
 				<ul>
 					<li id="fire">Fire</li>
@@ -30,7 +60,8 @@
 					<li id="earth">Earth</li>
 				</ul>
 			</nav>
-			<div id="bars">
+			<!--ally HP and MP bars-->
+			<div id="ally_bars">
 				<div id="HP_bar">
 					<div id="HP_ally_progress_bar"><div></div></div>
 					<div id="HP_ally"></div>/<div id="HP_ally_max"></div>
@@ -38,8 +69,9 @@
 				<div id="MP_bar">
 					<div id="MP_ally_progress_bar"><div></div></div>
 					<div id="MP_ally"></div>/<div id="MP_ally_max"></div>
+				</div>
 			</div>
-			</div>
+
 		</div>
 	</div>
 </body>
