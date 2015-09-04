@@ -13,14 +13,15 @@
 
 	<div id="battle">
 		<div id="field">
+
 			<div id="test">
 				<img style="width:100%;margin-top:-100px;" src="images/dragon.png">
 			</div>
 			<div id="player">
-				<img style="height:200px;display:block;margin-left:100px;" src="gifs/ragna.gif">
-				<img style="height:250px;display:block;margin-top:-175px;margin-left:100px;" src="gifs/yuzuriha.gif">
+				<img style="height:200px;display:block;margin-left:120px;margin-top:10%;" src="gifs/ragna.gif">
+				<img style="height:250px;display:block;margin-top:-40%;margin-left:100px;" src="gifs/yuzuriha.gif">
 				<img style="height:300px;display:block;margin-top:-175px;" src="gifs/izanagi.gif">
-				<img style="height:300px;display:block;margin-top:-175px;margin-left:100px;" src="gifs/justice.gif">
+				<img style="height:300px;display:block;margin-top:-40%;margin-left:150px;" src="gifs/justice.gif">
 			</div>
 		</div>
 		<div id="menu">
@@ -44,13 +45,24 @@
 			<!--actions-->
 			<nav id="options">
 				<ul>
-					<li>Attack</li>
+					<li id="attack">Attack</li>
 					<li id="magecraft">Magecraft</li>
-					<li>Item</li>
-					<li>Run</li>
+					<li id="item">Item</li>
+					<li id="run">Run</li>
 				</ul>
 			</nav>
 
+			<!--actions 2-->
+			<nav id="options2" class="none">
+				<ul>
+					<li id="attack">Attack</li>
+					<li id="battojutsu">Battojutsu</li>
+					<li id="item">Item</li>
+					<li id="run">Run</li>
+				</ul>
+			</nav>
+
+			<!--line-->
 			<div id="line" style="right:520px;"></div>
 
 			<!--magic-->
@@ -60,6 +72,16 @@
 					<li id="water">Water</li>
 					<li id="air">Air</li>
 					<li id="earth">Earth</li>
+				</ul>
+			</nav>
+
+			<!--battojutsu-->
+			<nav id="batto" class="none">
+				<ul>
+					<li id="soryusen">So Ryu Sen</li>
+					<li id="shuntensatsu">Shun Ten Satsu</li>
+					<li id="susanoo">Susanoo</li>
+					<li id="senbonzakura">Senbonzakura</li>
 				</ul>
 			</nav>
 

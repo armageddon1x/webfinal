@@ -15,6 +15,27 @@ $(document).ready(function(){
 	var MP_ally_max=100;
 	var MP_ally=MP_ally_max;
 
+	//this checks for either enemy HP or ally HP is zero
+	function game(){
+		var gameUpdate = setTimeout(function(){
+
+			console.log( "checking...");
+			magecraft();
+			dragon();
+
+			if( HP_enemy <= 0 ){
+				alert( "You win");
+			}else if(HP_ally<=0){
+				alert('you lose');
+			}else{
+				game();
+			}
+
+		}, 5500)
+	}
+
+	game();
+
 	//assigning values to the bar values
 	$("#HP_ally_max").html(HP_ally_max);
 	$("#MP_ally_max").html(MP_ally_max);
@@ -37,7 +58,7 @@ $(document).ready(function(){
 
 	//magic attack values
 	var fire=50;
-	var water=50;
+	var water=200;
 	var air=50;
 	var earth=50;
 
@@ -48,18 +69,22 @@ $(document).ready(function(){
 	var earth_mana=5;
 
 	//clicking first on the magic selector and then click on the spell to use
-	$("#magecraft").click(function(){
+	function magecraft(){
+		$("ul li:nth-child(2)").click(function(){
 
+		//makes each magic click only happen once
 		$("#magic li").unbind('click');
 
-		if (true) {
-			$("#magic").removeClass("none");
-		}
+		//makes magic menu appear
+		$("#magic").removeClass("none");
 
+		//click on magic menu
 		$("#magic").click(function(){
+			//this makes magic menu disappear
 			$("#magic").addClass("none");
 		});
 
+		//this get the attack name once you click on the attack
 		$("#magic li").click(function(){
 			var attack_name=$(this).attr("id");
 			console.log(attack_name)
@@ -97,8 +122,35 @@ $(document).ready(function(){
 
 			$("#magic").addClass("none");
 		});
-
 	});
+
+	};
+
+	var dragon_attack;
+
+	function dragon(){
+		//beginning
+
+		var dark_purge=50;			//selector numbers will be 0,1,2,3
+		var starfall=75;				//4,5,6
+		var grand_cross=100;		//7,8
+		var armageddon=200;			//9
+
+		var x = Math.floor((Math.random() * 10));
+		console.log(x);
+
+		if (x<4){
+			alert("death purge")
+		}else if(x<7&&x>3){
+			alert("starfall")
+		}else if(x===7||x===8){
+			alert("grand cross")
+		}else{
+			alert("armageddon")
+		};
+
+		//end
+	};
 
 	//click on fire, attack executes
 	/*$("#fire").click(function(){
@@ -135,7 +187,6 @@ $(document).ready(function(){
 		if (MP_ally<0){
 			alert("not enough MP")
 		};
-
 	});*/
 
 	//progress bar
@@ -144,13 +195,18 @@ $(document).ready(function(){
     $element.find('div').animate({width: progress_bar_width});
 	}
 
+	//audio loop
 	var audio_file = new Audio('sounds/bgm.mp3');
 	audio_file.play();
 	audio_file.addEventListener('timeupdate', function(){
-  var buffer = .44
-  if(this.currentTime > this.duration - buffer){
-      this.currentTime = .20
+  var buffer = 4
+  if(this.currentTime>(this.duration-buffer)){
+      this.currentTime = 25
       this.play()
+      console.log(this.currentTime);
+      console.log(this.duration-buffer);
+      console.log(this.duration);
+      console.log(buffer);
   }}, false);
 
 	//end
