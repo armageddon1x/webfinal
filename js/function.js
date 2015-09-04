@@ -49,9 +49,13 @@ $(document).ready(function(){
 
 	//clicking first on the magic selector and then click on the spell to use
 	$("#magecraft").click(function(){
+
+		$("#magic li").unbind('click');
+
 		if (true) {
 			$("#magic").removeClass("none");
 		}
+
 		$("#magic").click(function(){
 			$("#magic").addClass("none");
 		});
@@ -61,7 +65,6 @@ $(document).ready(function(){
 			console.log(attack_name)
 
 			//beginning
-
 			console.log("before attack "+HP_enemy);
 			console.log("mana reserve: "+MP_ally);
 			
@@ -139,7 +142,16 @@ $(document).ready(function(){
 	function progress(percent, $element) {
     var progress_bar_width=percent*$element.width()/100;
     $element.find('div').animate({width: progress_bar_width});
-}
+	}
+
+	var audio_file = new Audio('sounds/bgm.mp3');
+	audio_file.play();
+	audio_file.addEventListener('timeupdate', function(){
+  var buffer = .44
+  if(this.currentTime > this.duration - buffer){
+      this.currentTime = .20
+      this.play()
+  }}, false);
 
 	//end
 });

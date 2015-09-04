@@ -9,9 +9,7 @@
 </head>
 <body>
 
-	<audio autoplay loop> 
-  	<source src="sounds/bgm.mp3">
-	</audio>
+
 
 	<div id="battle">
 		<div id="field">
@@ -26,6 +24,8 @@
 			</div>
 		</div>
 		<div id="menu">
+			
+			<div id="enemy_name">Dark Dragon</div>
 
 			<!--enemy HP and MP-->
 			<div id="enemy_bars">
@@ -39,7 +39,8 @@
 				</div>
 			</div>
 
-			<div id="line" style="left:420px;"></div>
+			<div id="line" style="left:520px;"></div>
+
 			<!--actions-->
 			<nav id="options">
 				<ul>
@@ -50,7 +51,8 @@
 				</ul>
 			</nav>
 
-			<div id="line" style="right:420px;"></div>
+			<div id="line" style="right:520px;"></div>
+
 			<!--magic-->
 			<nav id="magic" class="none">
 				<ul>
@@ -60,6 +62,11 @@
 					<li id="earth">Earth</li>
 				</ul>
 			</nav>
+
+			<div id="ally_name">
+				<p>Player 1</p>
+			</div>
+
 			<!--ally HP and MP bars-->
 			<div id="ally_bars">
 				<div id="HP_bar">
