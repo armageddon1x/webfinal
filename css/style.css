@@ -107,6 +107,55 @@ li:hover{cursor: pointer;}
 	border-bottom: 1px solid white;
 }
 
+/*third options*/
+#options3{
+	width: 15%;
+	color: rgb(220,220,220);
+	font-size: 20px;
+	float: right;
+	position: absolute;
+	right: 540px;
+}
+#options3>ul{
+	list-style: none;
+}
+#options3>ul>li{
+	padding: 2.4% 20px;
+	border-bottom: 1px solid rgb(40,40,40);
+	text-indent: 10px;
+	background: black;
+}
+#options3>ul>li:hover{
+	background: black;
+	color: purple;
+	border-bottom: 1px solid white;
+}
+
+/*fourth options*/
+#options4{
+	width: 15%;
+	color: rgb(220,220,220);
+	font-size: 20px;
+	float: right;
+	position: absolute;
+	right: 540px;
+}
+#options4>ul{
+	list-style: none;
+}
+#options4>ul>li{
+	padding: 2.4% 20px;
+	border-bottom: 1px solid rgb(40,40,40);
+	text-indent: 10px;
+	background: black;
+}
+#options4>ul>li:hover{
+	background: black;
+	color: yellow;
+	border-bottom: 1px solid white;
+}
+
+
 /*magic*/
 #magic{
 	width: 15%;
@@ -154,6 +203,55 @@ li:hover{cursor: pointer;}
 	color: red;
 	border-bottom: 1px solid white;
 }
+
+/*special moves*/
+#special{
+	width: 15%;
+	color: rgb(220,220,220);
+	font-size: 20px;
+	z-index: 5;
+	background: black;
+	position: absolute;
+	right: 540px;
+}
+#special>ul{
+	list-style: none;
+}
+#special>ul>li{
+	padding: 2.4% 20px;
+	border-bottom: 1px solid rgb(40,40,40);
+	text-indent: 10px;
+}
+#special>ul>li:hover{
+	background: black;
+	color: red;
+	border-bottom: 1px solid white;
+}
+
+/*programs*/
+#program{
+	width: 15%;
+	color: rgb(220,220,220);
+	font-size: 20px;
+	z-index: 5;
+	background: black;
+	position: absolute;
+	right: 540px;
+}
+#program>ul{
+	list-style: none;
+}
+#program>ul>li{
+	padding: 2.4% 20px;
+	border-bottom: 1px solid rgb(40,40,40);
+	text-indent: 10px;
+}
+#program>ul>li:hover{
+	background: black;
+	color: red;
+	border-bottom: 1px solid white;
+}
+
 
 #ally_name{
 	display: inline-block;
