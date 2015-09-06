@@ -123,44 +123,44 @@ $(document).ready(function(){
 	$("#MP_enemy").html(MP_enemy);
 
 	//HP and MP max number values for allies
-	$(".HP_ally_max").html(HP_ally_max);
-	$(".MP_ally_max").html(MP_ally_max);
+	// $(".HP_ally_max").html(HP_ally_max);
+	// $(".MP_ally_max").html(MP_ally_max);
 
-	//HP and MP current number values for allies
-	$(".HP_ally").html(HP_ally);
-	$(".MP_ally").html(MP_ally);
+	// //HP and MP current number values for allies
+	// $(".HP_ally").html(HP_ally);
+	// $(".MP_ally").html(MP_ally);
 
 	//HP and MP max number values for ragna
-	$(".HP_ragna_max").html(HP_ragna_max);
-	$(".MP_ragna_max").html(MP_ragna_max);
+	$("#HP_ragna_max").html(HP_ragna_max);
+	$("#MP_ragna_max").html(MP_ragna_max);
 
 	//HP and MP current number values for ragna
-	$(".HP_ragna").html(HP_ragna);
-	$(".MP_ragna").html(MP_ragna);
+	$("#HP_ragna").html(HP_ragna);
+	$("#MP_ragna").html(MP_ragna);
 
 	//HP and MP max number values for yuzuriha
-	$(".HP_yuzuriha_max").html(HP_yuzuriha_max);
-	$(".MP_yuzuriha_max").html(MP_yuzuriha_max);
+	$("#HP_yuzuriha_max").html(HP_yuzuriha_max);
+	$("#MP_yuzuriha_max").html(MP_yuzuriha_max);
 
 	//HP and MP current number values for yuzuriha
-	$(".HP_yuzuriha").html(HP_yuzuriha);
-	$(".MP_yuzuriha").html(MP_yuzuriha);
+	$("#HP_yuzuriha").html(HP_yuzuriha);
+	$("#MP_yuzuriha").html(MP_yuzuriha);
 
 	//HP and MP max number values for izanagi
-	$(".HP_izanagi_max").html(HP_izanagi_max);
-	$(".MP_izanagi_max").html(MP_izanagi_max);
+	$("#HP_izanagi_max").html(HP_izanagi_max);
+	$("#MP_izanagi_max").html(MP_izanagi_max);
 
 	//HP and MP current number values for izanagi
-	$(".HP_izanagi").html(HP_izanagi);
-	$(".MP_izanagi").html(MP_izanagi);
+	$("#HP_izanagi").html(HP_izanagi);
+	$("#MP_izanagi").html(MP_izanagi);
 
 	//HP and MP max number values for justice
-	$(".HP_justice_max").html(HP_justice_max);
-	$(".MP_justice_max").html(MP_justice_max);
+	$("#HP_justice_max").html(HP_justice_max);
+	$("#MP_justice_max").html(MP_justice_max);
 
 	//HP and MP current number values for justice
-	$(".HP_justice").html(HP_justice);
-	$(".MP_justice").html(MP_justice);
+	$("#HP_justice").html(HP_justice);
+	$("#MP_justice").html(MP_justice);
 
 
 /**************************************************************************/
@@ -216,92 +216,7 @@ $(document).ready(function(){
 	var titaniumblow_mana=5;
 	var goldensmash_mana=5;
 
-	
-
 	var animation;
-
-	// //this cycles through the menus
-	// function menu(){
-	// 	//
-
-	// 	if(i===0){
-	// 		console.log("0");
-	// 		i=1;
-	// 		//removes the none class from the first menu
-	// 		$("#options").removeClass("none");
-	// 	}else if (i===1){
-	// 		console.log("1");
-			
-	// 		//removes the first menu
-	// 		$("#options").addClass("none");
-	// 		//displays the skills menu
-	// 		$("#magic").removeClass("none");
-	// 		//click on skills menu to make attack
-	// 		$("#magic").click(function(){
-	// 			i=2;
-
-	// 		//this makes the skills menu disappear
-	// 		$("#magic").addClass("none");
-	// 		//this makes the next menu appear
-	// 		$("#options2").removeClass("none");
-	// 	});
-
-	// 	}else if(i===2){
-	// 		console.log("2");
-			
-
-	// 		//removes second menu
-	// 		$("#options2").addClass("none");
-	// 		//displays the skills menu
-	// 		$("#batto").removeClass("none");
-	// 		//click on skills menu to make attack
-	// 		$("#batto").click(function(){
-	// 			i=3;
-	// 			//attack animation
-	// 			$("#yuzu_attack").show();
-	// 			setTimeout(function(){
-	// 					$("#yuzu_attack").attr('src', 'gifs/attack/yuzu.gif');
-	// 		      $('#yuzu_attack').hide();
-	// 				},2050);
-
-	// 		//this makes the skills menu disappear
-	// 		$("#batto").addClass("none");
-	// 		//this makes the next menu appear
-	// 		$("#options3").removeClass("none");
-	// 	});
-	// 	}else if(i===3){
-	// 		console.log("3");
-
-	// 		//removes third menu
-	// 		$("#options3").addClass("none");
-	// 		//displays the skills menu
-	// 		$("#special").removeClass("none");
-	// 		//click on skills menu to make attack
-	// 		$("#special").click(function(){
-	// 			i=4;
-	// 		//this makes the skills menu disappear
-	// 		$("#special").addClass("none");
-	// 		//this makes the next menu appear
-	// 		$("#options4").removeClass("none");
-	// 		});
-	// 	}else{
-	// 		console.log("4");
-			
-	// 		//removes fourth menu
-	// 		$("#options4").addClass("none");
-	// 		//displays the skills menu
-	// 		$("#program").removeClass("none");
-	// 		//click on skills menu to make attack
-	// 		$("#program").click(function(){
-	// 			i=1;
-	// 		//this makes the skills menu disappear
-	// 		$("#program").addClass("none");
-	// 		//this makes the first menu appear again
-	// 		$("#options").removeClass("none");
-	// 		});
-	// 	};
-	// 	//
-	// };
 
 /**************************************************************************/
 	//this cycles through the menus
@@ -363,10 +278,16 @@ $(document).ready(function(){
 				console.log("i is "+i);
 
 				//attack animation
+				$("#message").show();
+				$("#message p").html("Yuzuriha drew her sword! <ruby>Battojutsu<rt style='font-size:16px;'>Sword Draw Technique</rt></ruby> 1!");
+
 				$("#yuzu_attack").show();
+				$("#lightbox").show();
 				setTimeout(function(){
 						$("#yuzu_attack").attr('src', 'gifs/attack/yuzu.gif');
 			      $('#yuzu_attack').hide();
+			      $("#lightbox").hide();
+			      $("#message").hide();
 					},2050);
 				//end animation
 
@@ -468,19 +389,31 @@ $(document).ready(function(){
 
 				//mana usage
 
-				//determines which ally is attackin
+				//determines which ally is attacking
 				if(attack_person==="ragna_atk"){
-					alert(attack_person);
+					// alert(attack_person);
+					//mana usage
 					MP_ragna=MP_ragna-eval(attack_name+"_mana");
+					//update ally MP meter
+					$("#MP_ragna").html(MP_ragna);
 				}else if(attack_person==="yuzu_atk"){
-					alert(attack_person);
+					// alert(attack_person);
+					//mana usage
 					MP_yuzuriha=MP_yuzuriha-eval(attack_name+"_mana");
+					//update ally MP meter
+					$("#MP_yuzuriha").html(MP_yuzuriha);
 				} else if(attack_person==="iza_atk"){
-					alert(attack_person);
+					// alert(attack_person);
+					//mana usage
 					MP_izanagi=MP_izanagi-eval(attack_name+"_mana");
+					//update ally MP meter
+					$("#MP_izanagi").html(MP_izanagi);
 				}else{
-					alert(attack_person);
+					// alert(attack_person);
+					//mana usage
 					MP_justice=MP_justice-eval(attack_name+"_mana");
+					//update ally MP meter
+					$("#MP_justice").html(MP_izanagi);
 				};
 				//end
 
@@ -494,8 +427,7 @@ $(document).ready(function(){
 				// console.log("hp enemy max "+HP_enemy_max);
 				// console.log("ratio"+((HP_enemy*100)/HP_enemy_max));
 
-				//update HP and MP meters
-				$(".MP_ally").html(MP_ally);
+				//update enemy HP meter
 				$("#HP_enemy").html(HP_enemy);
 
 				//progress bar for meters

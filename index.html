@@ -10,8 +10,12 @@
 <body>
 
 	<div id="battle">
+		<div id="message" class="none">
+			<p></p>
+		</div>
 		<div id="field">
-			<img id="yuzu_attack" style="width:80%;position:absolute;right:0px;z-index:10;display:none;"src="gifs/attack/yuzu.gif">
+			<img id="yuzu_attack" style="width:78%;position:absolute;right:0px;z-index:10;display:none;"src="gifs/attack/yuzu.gif">
+			<div id="lightbox" class="none"></div>
 
 			<div id="test">
 				<img style="width:96%;margin-top:-100px;" src="images/dragon.png">
@@ -140,18 +144,46 @@
 			</div>
 			
 			<div id="ally_num">
-				<div id="ally_num_section">
-					<!--begin-->
-
+				<!--begin-->
+				<div class="ally_num_section">
 					<!--HP nums-->
-					<div id="" class="HP_ally num"></div>/
-					<div id="" class="HP_ally_max num"></div>
+					<div id="HP_ragna" class="HP_ally num"></div>/
+					<div id="HP_ragna_max" class="HP_ally_max num"></div>
 					<br>
 					<!--MP nums-->
-					<div id="" class="MP_ally num"></div>/
-					<div id="" class="MP_ally_max num"></div>	
+					<div id="MP_ragna" class="MP_ally num"></div>/
+					<div id="MP_ragna_max" class="MP_ally_max num"></div>	
 				</div>
 
+				<div class="ally_num_section">
+					<!--HP nums-->
+					<div id="HP_yuzuriha" class="HP_ally num"></div>/
+					<div id="HP_yuzuriha_max" class="HP_ally_max num"></div>
+					<br>
+					<!--MP nums-->
+					<div id="MP_yuzuriha" class="MP_ally num"></div>/
+					<div id="MP_yuzuriha_max" class="MP_ally_max num"></div>	
+				</div>
+
+				<div class="ally_num_section">
+					<!--HP nums-->
+					<div id="HP_izanagi" class="HP_ally num"></div>/
+					<div id="HP_izanagi_max" class="HP_ally_max num"></div>
+					<br>
+					<!--MP nums-->
+					<div id="MP_izanagi" class="MP_ally num"></div>/
+					<div id="MP_izanagi_max" class="MP_ally_max num"></div>	
+				</div>
+
+				<div class="ally_num_section">
+					<!--HP nums-->
+					<div id="HP_justice" class="HP_ally num"></div>/
+					<div id="HP_justice_max" class="HP_ally_max num"></div>
+					<br>
+					<!--MP nums-->
+					<div id="MP_justice" class="MP_ally num"></div>/
+					<div id="MP_justice_max" class="MP_ally_max num"></div>	
+				</div>
 				<!--end-->
 			</div>
 
