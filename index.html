@@ -95,40 +95,40 @@
 			<!--magic-->
 			<nav id="magic" class="none submenu menu">
 				<ul>
-					<li id="fire">Fire</li>
-					<li id="water">Water</li>
-					<li id="air">Air</li>
-					<li id="earth">Earth</li>
+					<li id="fire" class="ragna_atk">Fire</li>
+					<li id="water" class="ragna_atk">Water</li>
+					<li id="air" class="ragna_atk">Air</li>
+					<li id="earth" class="ragna_atk">Earth</li>
 				</ul>
 			</nav>
 
 			<!--battojutsu-->
 			<nav id="batto" class="none submenu menu">
 				<ul>
-					<li id="inazama">Inazama</li>
-					<li id="shuntensatsu">Shuntensatsu</li>
-					<li id="iaido">Iaido</li>
-					<li id="ameterasu">Ameterasu</li>
+					<li id="inazama" class="yuzu_atk">Inazama</li>
+					<li id="shuntensatsu" class="yuzu_atk">Shuntensatsu</li>
+					<li id="iaido" class="yuzu_atk">Iaido</li>
+					<li id="ameterasu" class="yuzu_atk">Ameterasu</li>
 				</ul>
 			</nav>
 
 			<!--special-->
 			<nav id="special" class="none submenu menu">
 				<ul>
-					<li id="swordslash">Sword Slash</li>
-					<li id="bladebarrage">Blade Barrage</li>
-					<li id="pierce">Pierce</li>
-					<li id="cutter">Cutter</li>
+					<li id="swordslash" class="iza_atk">Sword Slash</li>
+					<li id="bladebarrage" class="iza_atk">Blade Barrage</li>
+					<li id="pierce" class="iza_atk">Pierce</li>
+					<li id="cutter" class="iza_atk">Cutter</li>
 				</ul>
 			</nav>
 
 			<!--program-->
 			<nav id="program" class="none submenu menu">
 				<ul>
-					<li id="steelpunch">steel_punch.exe</li>
-					<li id="platinumslash">platinum_slash.exe</li>
-					<li id="titaniumblow">titanium_blow.exe</li>
-					<li id="goldensmash">golden_smash.exe</li>
+					<li id="steelpunch" class="just_atk">steel_punch.exe</li>
+					<li id="platinumslash" class="just_atk">platinum_slash.exe</li>
+					<li id="titaniumblow" class="just_atk">titanium_blow.exe</li>
+					<li id="goldensmash" class="just_atk">golden_smash.exe</li>
 				</ul>
 			</nav>
 
@@ -139,44 +139,107 @@
 				<p>Justice</p>
 			</div>
 			
-			<div style="position:absolute;right:280px;display:inline-block;">
-				<div style="padding-bottom:1px;border-bottom:1px white solid;padding-top:4px;">
-					<div id="HP_ally" class="num"></div>/
-					<div id="HP_ally_max" class="num"></div>
+			<div id="ally_num">
+				<div id="ally_num_section">
+					<!--begin-->
+
+					<!--HP nums-->
+					<div id="" class="HP_ally num"></div>/
+					<div id="" class="HP_ally_max num"></div>
 					<br>
-					<div id="MP_ally" class="num"></div>/
-					<div id="MP_ally_max" class="num"></div>	
+					<!--MP nums-->
+					<div id="" class="MP_ally num"></div>/
+					<div id="" class="MP_ally_max num"></div>	
 				</div>
-				
-				<div>
-					<div id="HP_ally" class="num"></div>/
-					<div id="HP_ally_max" class="num"></div>
-					<br>
-					<div id="MP_ally" class="num"></div>/
-					<div id="MP_ally_max" class="num"></div>	
+
+				<!--end-->
+			</div>
+
+			<!--ally HP and MP bars-->
+			<div style="float:right;">
+			<!--ragna HP and MP bars-->
+			<div class="ally_bars">
+				<!--HP bar-->
+				<div class="HP_bar">
+					<!--HP progress bar-->
+					<div id="ragna_hp" class="HP_ally_progress_bar ally_bar">
+						<!--HP changes here-->
+						<div class="ally_progress_bar"></div>
+					</div>
+				</div>
+				<!--MP bar-->
+				<div class="MP_bar">
+					<!--MP progress bar-->
+					<div id="ragna_mp" class="MP_ally_progress_bar ally_bar">
+						<!--MP changes here-->
+						<div class="ally_progress_bar"></div>
+					</div>
 				</div>
 
 			</div>
 
-			<!--ally HP and MP bars-->
-			<div id="ally_bars">
+			<!--yuzuriha HP and MP bars-->
+			<div class="ally_bars">
 				<!--HP bar-->
-				<div id="HP_bar">
-					<!--HP nums-->
+				<div class="HP_bar">
 					<!--HP progress bar-->
-					<div id="HP_ally_progress_bar" class="ally_bar">
+					<div id="yuzu_hp" class="HP_ally_progress_bar ally_bar">
+						<!--HP changes here-->
 						<div class="ally_progress_bar"></div>
 					</div>
 				</div>
-
-				<div id="MP_bar">
-					<!--MP nums-->
+				<!--MP bar-->
+				<div class="MP_bar">
 					<!--MP progress bar-->
-					<div id="MP_ally_progress_bar" class="ally_bar">
+					<div id="yuzu_mp" class="MP_ally_progress_bar ally_bar">
+						<!--MP changes here-->
 						<div class="ally_progress_bar"></div>
 					</div>
 				</div>
 
+			</div>
+
+			<!--izanagi HP and MP bars-->
+			<div class="ally_bars">
+				<!--HP bar-->
+				<div class="HP_bar">
+					<!--HP progress bar-->
+					<div id="iza_hp" class="HP_ally_progress_bar ally_bar">
+						<!--HP changes here-->
+						<div class="ally_progress_bar"></div>
+					</div>
+				</div>
+				<!--MP bar-->
+				<div class="MP_bar">
+					<!--MP progress bar-->
+					<div id="iza_mp" class="MP_ally_progress_bar ally_bar">
+						<!--MP changes here-->
+						<div class="ally_progress_bar"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<!--justice HP and MP bars-->
+			<div class="ally_bars">
+				<!--HP bar-->
+				<div class="HP_bar">
+					<!--HP progress bar-->
+					<div id="just_hp" class="HP_ally_progress_bar ally_bar">
+						<!--HP changes here-->
+						<div class="ally_progress_bar"></div>
+					</div>
+				</div>
+				<!--MP bar-->
+				<div class="MP_bar">
+					<!--MP progress bar-->
+					<div id="just_mp" class="MP_ally_progress_bar ally_bar">
+						<!--MP changes here-->
+						<div class="ally_progress_bar"></div>
+					</div>
+				</div>
+
+			</div>
 			</div>
 		</div>
 	</div>

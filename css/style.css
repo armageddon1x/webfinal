@@ -156,6 +156,14 @@ li:hover{cursor: pointer;}
 	width:150px
 }
 
+#ally_num{
+	position:absolute;
+	right:280px;
+	display:inline-block;}
+#ally_num_section{
+	padding-bottom:1px;
+	border-bottom:1px white solid;
+	padding-top:4px;}
 /*ally bar attributes*/
 .ally_bar{
 	width: 250px;
@@ -173,27 +181,26 @@ li:hover{cursor: pointer;}
 /*numbers and names*/
 .num{width:30px;}
 
-#ally_bars{
-	float: right;
+.ally_bars{
 	border-bottom: 1px solid white;
 	padding-right: 20px;
 	padding-bottom: 4px;
 }
 
-#HP_ally, #HP_ally_max, #MP_ally, #MP_ally_max{display: inline-block;}
-#HP_ally, #MP_ally{text-align: right;}
-#HP_bar{width: 250px;}
+.HP_ally, .HP_ally_max, .MP_ally, .MP_ally_max{display: inline-block;}
+.HP_ally, .MP_ally{text-align: right;}
+.HP_bar{width: 250px;}
 
-#HP_nums, #MP_nums{display: inline-block;}
+.HP_nums, .MP_nums{display: inline-block;}
 
-#HP_ally_progress_bar{
+.HP_ally_progress_bar{
   border-bottom: 2px solid #006601;
   border-right: 2px solid #006601;}
-#HP_ally_progress_bar div{background-color: #55FD40;}
-#MP_ally_progress_bar{
+.HP_ally_progress_bar div{background-color: #55FD40;}
+.MP_ally_progress_bar{
 	border-bottom: 2px solid #2F06FF;
   border-right: 2px solid #2F06FF;}
-#MP_ally_progress_bar div{background-color: #33AAFF;}
+.MP_ally_progress_bar div{background-color: #33AAFF;}
 
 /**************************************************************************/
 

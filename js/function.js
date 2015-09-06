@@ -1,19 +1,54 @@
 $(document).ready(function(){
 	//beginning
 
-	//HP values
+	//HP values for enemy
 	var HP_enemy=500;
 	var HP_enemy_max=HP_enemy;
 
+	//HP values for allies
 	var HP_ally_max=100;
 	var HP_ally=HP_ally_max;
 
-	//MP values
+	//HP values for ragna
+	var HP_ragna_max=100;
+	var HP_ragna=HP_ragna_max;
+
+	//HP values for yuzuriha
+	var HP_yuzuriha_max=100;
+	var HP_yuzuriha=HP_yuzuriha_max;
+
+	//HP values for izanagi
+	var HP_izanagi_max=100;
+	var HP_izanagi=HP_izanagi_max;
+
+	//HP values for justice
+	var HP_justice_max=100;
+	var HP_justice=HP_justice_max;
+
+/**************************************************************************/
+	//MP values for enemy
 	var MP_enemy=100;
 	var MP_enemy_max=MP_enemy;
 
+	//MP value for allies
 	var MP_ally_max=100;
 	var MP_ally=MP_ally_max;
+
+	//MP value for ragna
+	var MP_ragna_max=100;
+	var MP_ragna=MP_ragna_max;
+
+	//MP value for yuzuriha
+	var MP_yuzuriha_max=100;
+	var MP_yuzuriha=MP_yuzuriha_max;
+
+	//MP value for izanagi
+	var MP_izanagi_max=100;
+	var MP_izanagi=MP_izanagi_max;
+
+	//MP value for allies
+	var MP_justice_max=100;
+	var MP_justice=MP_justice_max;
 
 	//this checks for either enemy HP or ally HP is zero
 	// function game(){
@@ -40,34 +75,93 @@ $(document).ready(function(){
 //counter for menu cycling
 	var i=0;
 	var turn=0;
-	if (HP_enemy!==0 && HP_ally!==0){
+
+	if (HP_enemy >= 0 && HP_ally >= 0){
+		turn++;
+		alert("turn: "+turn);
+
 		menu();
 		submenu();
-		turn++;
-		alert(turn);
-		alert("HP enemy"+HP_enemy);
-		alert("HP ally"+HP_ally);
-	}else if (HP_enemy<=0){
-		alert("you win");
-	}else{
-		alert("you lose");
-	}
+		dragon();
 
+		console.log(HP_enemy);
+		console.log(HP_ally);
+
+};
+
+	// if (HP_enemy!==0 && HP_ally!==0){
+	// 	menu();
+	// 	submenu();
+	// 	turn++;
+	// 	alert(turn);
+	// 	alert("HP enemy"+HP_enemy);
+	// 	alert("HP ally"+HP_ally);
+
+	// 	if (HP_enemy<=0){
+	// 	alert("you win");
+	// 	}
+	// 	if(HP_ally<=0){
+	// 	alert("you lose");
+	// 	}
+
+	// };
+	// if (HP_enemy<=0){
+	// 	alert("you win");
+	// }else{
+	// 	alert("you lose");
+	// }
+
+/**************************************************************************/
 	//assigning values to the bar values
-	$("#HP_ally_max").html(HP_ally_max);
-	$("#MP_ally_max").html(MP_ally_max);
 
-	$("#HP_ally").html(HP_ally);
-	$("#MP_ally").html(MP_ally);
-
+	//HP and MP max number values for enemy
 	$("#HP_enemy_max").html(HP_enemy_max);
 	$("#MP_enemy_max").html(MP_enemy_max);
 
+	//HP and MP current number values for enemy
 	$("#HP_enemy").html(HP_enemy);
 	$("#MP_enemy").html(MP_enemy);
 
-	//var enemy=true;
-	//var ally=true;
+	//HP and MP max number values for allies
+	$(".HP_ally_max").html(HP_ally_max);
+	$(".MP_ally_max").html(MP_ally_max);
+
+	//HP and MP current number values for allies
+	$(".HP_ally").html(HP_ally);
+	$(".MP_ally").html(MP_ally);
+
+	//HP and MP max number values for ragna
+	$(".HP_ragna_max").html(HP_ragna_max);
+	$(".MP_ragna_max").html(MP_ragna_max);
+
+	//HP and MP current number values for ragna
+	$(".HP_ragna").html(HP_ragna);
+	$(".MP_ragna").html(MP_ragna);
+
+	//HP and MP max number values for yuzuriha
+	$(".HP_yuzuriha_max").html(HP_yuzuriha_max);
+	$(".MP_yuzuriha_max").html(MP_yuzuriha_max);
+
+	//HP and MP current number values for yuzuriha
+	$(".HP_yuzuriha").html(HP_yuzuriha);
+	$(".MP_yuzuriha").html(MP_yuzuriha);
+
+	//HP and MP max number values for izanagi
+	$(".HP_izanagi_max").html(HP_izanagi_max);
+	$(".MP_izanagi_max").html(MP_izanagi_max);
+
+	//HP and MP current number values for izanagi
+	$(".HP_izanagi").html(HP_izanagi);
+	$(".MP_izanagi").html(MP_izanagi);
+
+	//HP and MP max number values for justice
+	$(".HP_justice_max").html(HP_justice_max);
+	$(".MP_justice_max").html(MP_justice_max);
+
+	//HP and MP current number values for justice
+	$(".HP_justice").html(HP_justice);
+	$(".MP_justice").html(MP_justice);
+
 
 /**************************************************************************/
 	//attack values (current attack stored here)
@@ -347,54 +441,78 @@ $(document).ready(function(){
 		//another menu of skills  (ex: #magecraft -> #magic)
 		$("ul li:nth-child(2)").click(function(){
 
-		//makes each magic click only happen once
-		$(".submenu li").unbind('click');
+			//makes each magic click only happen once
+			$(".submenu li").unbind('click');
 
-		//runs menu function for menu cycling
-		menu();
+			//runs menu function for menu cycling
+			menu();
 
-		//this get the attack name once you click on the attack
-		$(".submenu li").click(function(){
-			var attack_name=$(this).attr("id");
-			console.log(attack_name)
+			//this get the attack name once you click on the attack
+			$(".submenu li").click(function(){
+				var attack_name=$(this).attr("id");
+				var attack_person=$(this).attr("class")
+				// console.log(attack_name)
 
-			//beginning
-			console.log("before attack "+HP_enemy);
-			console.log("mana reserve: "+MP_ally);
-			
-			//the attack value becomes the move that was chosen for the turn
-			attack_ally=eval(attack_name);
-			alert("cast "+attack_name);
-			alert(attack_ally);
+				//beginning
+				// console.log("before attack "+HP_enemy);
+				// console.log("mana reserve: "+MP_ally);
+				
+				//the attack value becomes the move that was chosen for the turn
+				attack_ally=eval(attack_name);
+				// alert("cast "+attack_name);
+				// alert(attack_ally);
 
-			//loss of enemy HP
-			HP_enemy=HP_enemy-attack_ally;
-			console.log("after attack "+HP_enemy);
+				//loss of enemy HP
+				HP_enemy=HP_enemy-attack_ally;
+				console.log("after attack "+HP_enemy);
 
-			//mana usage
-			MP_ally=MP_ally-eval(attack_name+"_mana");
-			console.log("mana cost " +attack_name+"_mana");
-			console.log("mana cost " +eval(attack_name+"_mana"));
-			console.log("MP remaining: "+MP_ally)
+				//mana usage
 
-			console.log("hp enemy "+HP_enemy);
-			console.log("hp enemy max "+HP_enemy_max);
-			console.log("ratio"+((HP_enemy*100)/HP_enemy_max));
+				//determines which ally is attackin
+				if(attack_person==="ragna_atk"){
+					alert(attack_person);
+					MP_ragna=MP_ragna-eval(attack_name+"_mana");
+				}else if(attack_person==="yuzu_atk"){
+					alert(attack_person);
+					MP_yuzuriha=MP_yuzuriha-eval(attack_name+"_mana");
+				} else if(attack_person==="iza_atk"){
+					alert(attack_person);
+					MP_izanagi=MP_izanagi-eval(attack_name+"_mana");
+				}else{
+					alert(attack_person);
+					MP_justice=MP_justice-eval(attack_name+"_mana");
+				};
+				//end
 
-			//update HP and MP meters
-			$("#MP_ally").html(MP_ally);
-			$("#HP_enemy").html(HP_enemy);
+				// MP_ally=MP_ally-eval(attack_name+"_mana");
 
-			//progress bar for meters
-			progress(MP_ally, $('#MP_ally_progress_bar'));
-			progress(((HP_enemy*100)/HP_enemy_max), $("#HP_enemy_progress_bar"));
+				// console.log("mana cost " +attack_name+"_mana");
+				// console.log("mana cost " +eval(attack_name+"_mana"));
+				// console.log("MP remaining: "+MP_ally)
 
-			//end
+				// console.log("hp enemy "+HP_enemy);
+				// console.log("hp enemy max "+HP_enemy_max);
+				// console.log("ratio"+((HP_enemy*100)/HP_enemy_max));
 
-			$("#magic").addClass("none");
+				//update HP and MP meters
+				$(".MP_ally").html(MP_ally);
+				$("#HP_enemy").html(HP_enemy);
+
+				//progress bar for meters
+				// progress(MP_ally, $('.MP_ally_progress_bar'));
+
+				progress(MP_ragna, $("#ragna_mp"));
+				progress(MP_yuzuriha, $("#yuzu_mp"));
+				progress(MP_izanagi, $("#iza_mp"));
+				progress(MP_justice, $("#just_mp"));
+
+				progress(((HP_enemy*100)/HP_enemy_max), $("#HP_enemy_progress_bar"));
+
+				//end
+
+				$("#magic").addClass("none");
+			});
 		});
-	});
-
 	};
 
 	var dragon_attack;
