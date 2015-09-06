@@ -181,13 +181,13 @@ $(document).ready(function(){
 	var earth_mana=5;
 
 	//battojutsu attack values
-	var inazama=50;
+	var inazuma=50;
 	var shuntensatsu=50;
 	var iaido=50;
 	var ameterasu=50;
 
 	//mana values
-	var inazama_mana=5;
+	var inazuma_mana=5;
 	var shuntensatsu_mana=5;
 	var iaido_mana=5;
 	var ameterasu_mana=5;
@@ -216,7 +216,15 @@ $(document).ready(function(){
 	var titaniumblow_mana=5;
 	var goldensmash_mana=5;
 
-	var animation;
+	var ragna_action="Ragna unleashed his rage! ";
+	var yuzu_action="Yuzuriha drew her sword! ";
+	var iza_action="Izanagi released his power! ";
+	var just_action="Justice executed her code! ";
+
+	var ragna_tech="<ruby>Magecraft<rt style='font-size:14px;'>Magic of the Zeroth Beast</rt></ruby>!!";
+	var yuzu_tech="<ruby>Battojutsu<rt style='font-size:14px;'>Sword Draw Technique</rt></ruby>!!";
+	var iza_tech="<ruby>Special Move<rt style='font-size:14px;'>Deity Strike</rt></ruby>!!";
+	var just_tech="<ruby>program_exe<rt style='font-size:14px;'>Code Array Initiation</rt></ruby>!!";
 
 /**************************************************************************/
 	//this cycles through the menus
@@ -251,6 +259,21 @@ $(document).ready(function(){
 
 				console.log("i is "+i);
 
+				//attack message
+				$("#message").show();
+				$("#message p").html(ragna_action+ragna_tech+"<br>"+attack);
+
+				//attack animation
+				// $("#yuzu_attack").show();
+				$("#lightbox").show();
+				setTimeout(function(){
+					// $("#yuzu_attack").attr('src', 'gifs/attack/yuzu.gif');
+		   //    $('#yuzu_attack').hide();
+		      $("#lightbox").hide();
+		      $("#message").hide();
+				},2050);
+				//end animation
+
 				//this makes the skills menu disappear
 				$("#magic").addClass("none");
 				//this makes the next menu appear
@@ -277,10 +300,11 @@ $(document).ready(function(){
 
 				console.log("i is "+i);
 
-				//attack animation
+				//attack message
 				$("#message").show();
-				$("#message p").html("Yuzuriha drew her sword! <ruby>Battojutsu<rt style='font-size:16px;'>Sword Draw Technique</rt></ruby> 1!");
+				$("#message p").html(yuzu_action+yuzu_tech+"<br>"+attack);
 
+				//attack animation
 				$("#yuzu_attack").show();
 				$("#lightbox").show();
 				setTimeout(function(){
@@ -317,6 +341,21 @@ $(document).ready(function(){
 
 				console.log("i is "+i);
 
+				//attack message
+				$("#message").show();
+				$("#message p").html(iza_action+iza_tech+"<br>"+attack);
+
+				//attack animation
+				// $("#yuzu_attack").show();
+				$("#lightbox").show();
+				setTimeout(function(){
+					// $("#yuzu_attack").attr('src', 'gifs/attack/yuzu.gif');
+		   //    $('#yuzu_attack').hide();
+		      $("#lightbox").hide();
+		      $("#message").hide();
+				},2050);
+				//end animation
+
 				//this makes the skills menu disappear
 				$("#special").addClass("none");
 				//this makes the next menu appear
@@ -342,6 +381,21 @@ $(document).ready(function(){
 			$("#program").click(function(){
 
 				console.log("i is "+i);
+
+				//attack message
+				$("#message").show();
+				$("#message p").html(just_action+just_tech+"<br>"+attack);
+
+				//attack animation
+				// $("#yuzu_attack").show();
+				$("#lightbox").show();
+				setTimeout(function(){
+					// $("#yuzu_attack").attr('src', 'gifs/attack/yuzu.gif');
+		   //    $('#yuzu_attack').hide();
+		      $("#lightbox").hide();
+		      $("#message").hide();
+				},2050);
+				//end animation
 
 				//this makes the skills menu disappear
 				$("#program").addClass("none");
@@ -372,6 +426,65 @@ $(document).ready(function(){
 			$(".submenu li").click(function(){
 				var attack_name=$(this).attr("id");
 				var attack_person=$(this).attr("class")
+				attack=$(this).html();
+
+				//adding ruby text to attack names
+				//ragna's attacks
+				if(attack==="Fire"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Megiddo Flare</rt></ruby>!!!";
+				};
+				if(attack==="Water"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Deluge Storm</rt></ruby>!!!";
+				};
+				if(attack==="Air"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Zephyr Wing</rt></ruby>!!!";
+				};
+				if(attack==="Earth"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Tartarus Break</rt></ruby>!!!";
+				};
+
+				//yuzuriha's attacks
+				if(attack==="Inazuma"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Lightning</rt></ruby>!!!";
+				};
+				if(attack==="Shuntensatsu"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Instant Heavenly Murder</rt></ruby>!!!";
+				};
+				if(attack==="Iaido"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Art of the Sword Draw</rt></ruby>!!!";
+				};
+				if(attack==="Ameterasu"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Goddess of the Sun</rt></ruby>!!!";
+				};
+
+				//izanagi's attacks
+				if(attack==="Swordslash"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Dimensional Rift</rt></ruby>!!!";
+				};
+				if(attack==="Blade Barrage"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Eighth Snake's Nest</rt></ruby>!!!";
+				};
+				if(attack==="Pierce"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Heart Stopper</rt></ruby>!!!";
+				};
+				if(attack==="Cutter"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Infinite Separation</rt></ruby>!!!";
+				};
+
+				//justice's attacks
+				if(attack==="steel_punch.exe"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Fist of the Steel King</rt></ruby>!!!";
+				};
+				if(attack==="platinum_slash.exe"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Sword of the Platinum Queen</rt></ruby>!!!";
+				};
+				if(attack==="titanium_blow.exe"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Scepter of the Titanium Emperor</rt></ruby>!!!";
+				};
+				if(attack==="golden_smash.exe"){
+					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Regalia of the Golden Empress</rt></ruby>!!!";
+				};
+
 				// console.log(attack_name)
 
 				//beginning
