@@ -146,10 +146,14 @@ $(document).ready(function(){
 			//click on skills menu to make attack
 			$("#batto").click(function(){
 				i=3;
-				animation=$("#yuzu_attack").show();
-				var a=setTimeout(function(){
+
+
+
+				$("#yuzu_attack").show();
+				setTimeout(function(){
+						$("#yuzu_attack").attr('src', 'gifs/attack/yuzu.gif');
 			      $('#yuzu_attack').hide();
-					},1700);
+					},2050);
 
 			//this makes the skills menu disappear
 			$("#batto").addClass("none");
