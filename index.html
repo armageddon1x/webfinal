@@ -17,14 +17,13 @@
 				<img style="width:96%;margin-top:-100px;" src="images/dragon.png">
 			</div>
 			<div id="player">
-
 				<img style="height:200px;display:block;margin-left:120px;margin-top:10%;" src="gifs/ragna.gif">
 				<img style="height:250px;display:block;margin-top:-40%;margin-left:100px;" src="gifs/yuzuriha.gif">
 				<img style="height:300px;display:block;margin-top:-175px;" src="gifs/izanagi.gif">
 				<img style="height:300px;display:block;margin-top:-40%;margin-left:150px;" src="gifs/justice.gif">
 			</div>
 		</div>
-		<div id="menu">
+		<div id="menu_s">
 			
 			<div id="enemy_name">
 				<p class="name">Chaos Machine</p>
@@ -94,7 +93,7 @@
 			<div id="line" style="right:520px;"></div>
 
 			<!--magic-->
-			<nav id="magic" class="none submenu">
+			<nav id="magic" class="none submenu menu">
 				<ul>
 					<li id="fire">Fire</li>
 					<li id="water">Water</li>
@@ -104,7 +103,7 @@
 			</nav>
 
 			<!--battojutsu-->
-			<nav id="batto" class="none submenu">
+			<nav id="batto" class="none submenu menu">
 				<ul>
 					<li id="inazama">Inazama</li>
 					<li id="shuntensatsu">Shuntensatsu</li>
@@ -114,7 +113,7 @@
 			</nav>
 
 			<!--special-->
-			<nav id="special" class="none submenu">
+			<nav id="special" class="none submenu menu">
 				<ul>
 					<li id="swordslash">Sword Slash</li>
 					<li id="bladebarrage">Blade Barrage</li>
@@ -124,7 +123,7 @@
 			</nav>
 
 			<!--program-->
-			<nav id="program" class="none submenu">
+			<nav id="program" class="none submenu menu">
 				<ul>
 					<li id="steelpunch">steel_punch.exe</li>
 					<li id="platinumslash">platinum_slash.exe</li>
@@ -139,18 +138,31 @@
 				<p>Izanagi</p>
 				<p>Justice</p>
 			</div>
+			
+			<div style="position:absolute;right:280px;display:inline-block;">
+				<div style="padding-bottom:1px;border-bottom:1px white solid;padding-top:4px;">
+					<div id="HP_ally" class="num"></div>/
+					<div id="HP_ally_max" class="num"></div>
+					<br>
+					<div id="MP_ally" class="num"></div>/
+					<div id="MP_ally_max" class="num"></div>	
+				</div>
+				
+				<div>
+					<div id="HP_ally" class="num"></div>/
+					<div id="HP_ally_max" class="num"></div>
+					<br>
+					<div id="MP_ally" class="num"></div>/
+					<div id="MP_ally_max" class="num"></div>	
+				</div>
+
+			</div>
 
 			<!--ally HP and MP bars-->
 			<div id="ally_bars">
 				<!--HP bar-->
 				<div id="HP_bar">
 					<!--HP nums-->
-					<div id="HP_nums">
-						<!--HP current/HP max-->
-						<div id="HP_ally" class="num"></div>
-						/
-						<div id="HP_ally_max" class="num"></div>
-					</div>
 					<!--HP progress bar-->
 					<div id="HP_ally_progress_bar" class="ally_bar">
 						<div class="ally_progress_bar"></div>
@@ -159,12 +171,6 @@
 
 				<div id="MP_bar">
 					<!--MP nums-->
-					<div id="MP_nums">
-						<!--MP current/MP max-->
-						<div id="MP_ally" class="num"></div>
-						/
-						<div id="MP_ally_max" class="num"></div>	
-					</div>
 					<!--MP progress bar-->
 					<div id="MP_ally_progress_bar" class="ally_bar">
 						<div class="ally_progress_bar"></div>
