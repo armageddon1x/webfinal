@@ -3,10 +3,13 @@
 	margin: 0;
 	color: white;
 	font-family: helvetica;
-	font-variant: small-caps;
-}
+	font-variant: small-caps;}
 #battle{background: black;}
-#field{height: 80vh;position: relative;overflow: hidden;background: rgba(0,0,0,.5);}
+#field{
+	height: 78vh;
+	position: relative;
+	overflow: hidden;
+	background: rgba(0,0,0,.5);}
 #field:before {
     content: ' ';
     display: block;
@@ -27,7 +30,7 @@
     background-size: cover;
 }
 
-#menu{height: 20vh;background: rgb(25,25,25);}
+/**************************************************************************/
 
 #test{
 	display: inline-block;
@@ -42,19 +45,36 @@
 	z-index: 5;
 }
 
-nav{display: inline-block;}
+/**************************************************************************/
 
 #menu{
+	height: 22vh;
+	background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0, #000000),
+	color-stop(1, #333333)
+	);
+	background-image: -o-linear-gradient(bottom, #000000 0%, #222222 100%);
+	background-image: -moz-linear-gradient(bottom, #000000 0%, #222222 100%);
+	background-image: -webkit-linear-gradient(bottom, #000000 0%, #222222 100%);
+	background-image: -ms-linear-gradient(bottom, #000000 0%, #222222 100%);
+	background-image: linear-gradient(to bottom, #000000 0%, #222222 100%);
 }
+
+nav{display: inline-block;}
 
 #line{
 	border-right: 1px solid white;
 	display: inline-block;
-	height: 20%;
+	height: 22%;
 	position: absolute;
 }
 
 li:hover{cursor: pointer;}
+
+/**************************************************************************/
 
 /*class to appear and disappear menus*/
 .none{display: none;}
@@ -62,7 +82,6 @@ li:hover{cursor: pointer;}
 /*initial options*/
 #options{
 	width: 15%;
-	color: rgb(220,220,220);
 	font-size: 20px;
 	float: right;
 	position: absolute;
@@ -75,7 +94,6 @@ li:hover{cursor: pointer;}
 	padding: 2.4% 20px;
 	border-bottom: 1px solid rgb(40,40,40);
 	text-indent: 10px;
-	background: black;
 }
 #options>ul>li:hover{
 	background: black;
@@ -99,7 +117,6 @@ li:hover{cursor: pointer;}
 	padding: 2.4% 20px;
 	border-bottom: 1px solid rgb(40,40,40);
 	text-indent: 10px;
-	background: black;
 }
 #options2>ul>li:hover{
 	background: black;
@@ -123,7 +140,6 @@ li:hover{cursor: pointer;}
 	padding: 2.4% 20px;
 	border-bottom: 1px solid rgb(40,40,40);
 	text-indent: 10px;
-	background: black;
 }
 #options3>ul>li:hover{
 	background: black;
@@ -147,7 +163,6 @@ li:hover{cursor: pointer;}
 	padding: 2.4% 20px;
 	border-bottom: 1px solid rgb(40,40,40);
 	text-indent: 10px;
-	background: black;
 }
 #options4>ul>li:hover{
 	background: black;
@@ -155,6 +170,7 @@ li:hover{cursor: pointer;}
 	border-bottom: 1px solid white;
 }
 
+/**************************************************************************/
 
 /*magic*/
 #magic{
@@ -162,7 +178,6 @@ li:hover{cursor: pointer;}
 	color: rgb(220,220,220);
 	font-size: 20px;
 	z-index: 5;
-	background: black;
 	position: absolute;
 	right: 540px;
 }
@@ -186,7 +201,6 @@ li:hover{cursor: pointer;}
 	color: rgb(220,220,220);
 	font-size: 20px;
 	z-index: 5;
-	background: black;
 	position: absolute;
 	right: 540px;
 }
@@ -210,7 +224,6 @@ li:hover{cursor: pointer;}
 	color: rgb(220,220,220);
 	font-size: 20px;
 	z-index: 5;
-	background: black;
 	position: absolute;
 	right: 540px;
 }
@@ -234,7 +247,6 @@ li:hover{cursor: pointer;}
 	color: rgb(220,220,220);
 	font-size: 20px;
 	z-index: 5;
-	background: black;
 	position: absolute;
 	right: 540px;
 }
@@ -252,108 +264,104 @@ li:hover{cursor: pointer;}
 	border-bottom: 1px solid white;
 }
 
+/**************************************************************************/
 
+/*names of all allies*/
 #ally_name{
 	display: inline-block;
 	position: absolute;
-	right: 400px;
+	right: 420px;
 	width: 100px;
 }
 #ally_name p{
 	border-bottom: 1px white solid;
 	border-right: 1px white solid;
-	border-bottom-right-radius: 50px;
+	border-bottom-right-radius: 10px;
+	font-size: 20px;
+	padding-bottom: 3px;
+	padding-top: 15px;
+	padding-left: 10px;
+	width:150px
 }
+
+/*ally bar attributes*/
+.ally_bar{
+	width: 250px;
+  height: 10px;
+  border-bottom-right-radius: 5px;
+	display: inline-block;}
+.ally_progress_bar{
+	position: relative;
+	top: 40%;
+  height: 60%;
+  width: 250px;
+  border-bottom-right-radius: 3px;}
+
+/*numbers and names*/
+.num{width:30px;}
 
 #ally_bars{
-	display: inline-block;
 	float: right;
-	position: absolute;
-	right:0;
+	border-bottom: 1px solid white;
+	padding-right: 20px;padding-top: 3px;padding-bottom: 2px;
 }
 
-#HP_bar, #MP_bar{}
-#HP_ally, #HP_ally_max{display: inline-block;}
-#MP_ally, #MP_ally_max{display: inline-block;}
+#HP_ally, #HP_ally_max, #MP_ally, #MP_ally_max{display: inline-block;}
+
+#HP_nums, #MP_nums{display: inline-block;}
 
 #HP_ally_progress_bar{
-    width: 400px;
-    height: 10px;
-    border: 2px solid #006601;
-    background-color: black;
-    border-radius: 10px;
-}
-#HP_ally_progress_bar div{
-    height: 100%;
-    color: #fff;
-    width: 400px;
-    background-color: #55FD40;
-    border-radius: 10px;
-}
-
+  border-bottom: 2px solid #006601;
+  border-right: 2px solid #006601;}
+#HP_ally_progress_bar div{background-color: #55FD40;}
 #MP_ally_progress_bar{
-    width: 400px;
-    height: 10px;
-    border: 2px solid #2F06FF;
-    background-color: black;
-    border-radius: 10px;
-}
-#MP_ally_progress_bar div{
-    height: 100%;
-    color: #fff;
-    width: 400px;
-    background-color: #33AAFF;
-    border-radius: 10px;
-}
+	border-bottom: 2px solid #2F06FF;
+  border-right: 2px solid #2F06FF;}
+#MP_ally_progress_bar div{background-color: #33AAFF;}
+
+/**************************************************************************/
 
 #enemy_name{
 	display: inline-block;
-	width: 100px;
 }
+#enemy_name p{
+	font-size: 24px;
+	padding-bottom: 3px;
+	padding-top: 10px;
+	padding-left: 10px;
+	width:175px;
+}
+
+/*enemy bar attributes*/
+.enemy_bar{
+	width: 400px;
+  height: 20px;
+  border-bottom-right-radius: 5px;}
+.enemy_progress_bar{
+	position: relative;
+	top: 40%;
+  height: 60%;
+  width: 400px;}
 
 #enemy_bars{
 	display: inline-block;
 	margin-top: 10px;
 	float: left;
 	position: absolute;
-	left: 100px;
+	left: 180px;
+	border-bottom: solid 3px white;
+	padding-bottom: 5px;
 }
 
-#HP_bar, #MP_bar{}
-#HP_enemy, #HP_enemy_max{display: inline-block;}
-#MP_enemy, #MP_enemy_max{display: inline-block;}
+#HP_enemy, #HP_enemy_max, #MP_enemy, #MP_enemy_max{display: inline-block;}
 
+/*HP bar*/
 #HP_enemy_progress_bar{
-    width: 400px;
-    height: 10px;
-    /*border: 2px solid #660A00;*/
-    border-bottom: 2px solid #660A00;
-    border-right: 2px solid #660A00;
-    border-bottom-right-radius: 10px;
-    /*border-radius: 10px;*/
-}
-#HP_enemy_progress_bar div{
-		position: relative;
-		top: 40%;
-    height: 60%;
-    color: #fff;
-    width: 400px;
-    background-color: #FD1900;
-    /*border-radius: 10px;*/
-    border-bottom-right-radius: 10px;
-}
-
+    border-bottom: 4px solid #660A00;
+    border-right: 4px solid #660A00;}
+#HP_enemy_progress_bar div{background-color: #FD1900;}
+/*MP bar*/
 #MP_enemy_progress_bar{
-    width: 400px;
-    height: 10px;
-    border: 2px solid #660052;
-    background-color: black;
-    border-radius: 10px;
-}
-#MP_enemy_progress_bar div{
-    height: 100%;
-    color: #fff;
-    width: 400px;
-    background-color: #FD00CD;
-    border-radius: 10px;
-}
+	border-bottom: 4px solid #660052;
+	border-right: 4px solid #660052;}
+#MP_enemy_progress_bar div{background-color: #FD00CD;}

@@ -9,15 +9,15 @@
 </head>
 <body>
 
-
-
 	<div id="battle">
 		<div id="field">
+			<img id="yuzu_attack" style="width:80%;position:absolute;right:0px;z-index:10;display:none;"src="gifs/attack/yuzu.gif">
 
 			<div id="test">
-				<img style="width:100%;margin-top:-100px;" src="images/dragon.png">
+				<img style="width:96%;margin-top:-100px;" src="images/dragon.png">
 			</div>
 			<div id="player">
+
 				<img style="height:200px;display:block;margin-left:120px;margin-top:10%;" src="gifs/ragna.gif">
 				<img style="height:250px;display:block;margin-top:-40%;margin-left:100px;" src="gifs/yuzuriha.gif">
 				<img style="height:300px;display:block;margin-top:-175px;" src="gifs/izanagi.gif">
@@ -26,21 +26,29 @@
 		</div>
 		<div id="menu">
 			
-			<div id="enemy_name">Dark Dragon</div>
+			<div id="enemy_name">
+				<p class="name">Chaos Machine</p>
+				<p style="font-size:14px;">Dragon of Apocalypse</p>
+			</div>
 
 			<!--enemy HP and MP-->
 			<div id="enemy_bars">
+
 				<div id="HP_bar">
-					<div id="HP_enemy_progress_bar"><div></div></div>
+					<div id="HP_enemy_progress_bar" class="enemy_bar">
+						<div class="enemy_progress_bar"></div>
+					</div>
 					<div id="HP_enemy"></div>/<div id="HP_enemy_max"></div>
 				</div>
 				<div id="MP_bar">
-					<div id="MP_enemy_progress_bar"><div></div></div>
+					<div id="MP_enemy_progress_bar" class="enemy_bar">
+						<div class="enemy_progress_bar"></div>
+					</div>
 					<div id="MP_enemy"></div>/<div id="MP_enemy_max"></div>
 				</div>
 			</div>
 
-			<div id="line" style="left:520px;"></div>
+			<div id="line" style="left:590px;"></div>
 
 			<!--actions-->
 			<nav id="options"class="none menu">
@@ -126,22 +134,46 @@
 			</nav>
 
 			<div id="ally_name">
-				<p>Player 1</p>
+				<p>Ragna</p>
+				<p>Yuzuriha</p>
+				<p>Izanagi</p>
+				<p>Justice</p>
 			</div>
 
 			<!--ally HP and MP bars-->
 			<div id="ally_bars">
+				<!--HP bar-->
 				<div id="HP_bar">
-					<div id="HP_ally_progress_bar"><div></div></div>
-					<div id="HP_ally"></div>/<div id="HP_ally_max"></div>
+					<!--HP nums-->
+					<div id="HP_nums">
+						<!--HP current/HP max-->
+						<div id="HP_ally" class="num"></div>
+						/
+						<div id="HP_ally_max" class="num"></div>
+					</div>
+					<!--HP progress bar-->
+					<div id="HP_ally_progress_bar" class="ally_bar">
+						<div class="ally_progress_bar"></div>
+					</div>
 				</div>
-				<div id="MP_bar">
-					<div id="MP_ally_progress_bar"><div></div></div>
-					<div id="MP_ally"></div>/<div id="MP_ally_max"></div>
-				</div>
-			</div>
 
+				<div id="MP_bar">
+					<!--MP nums-->
+					<div id="MP_nums">
+						<!--MP current/MP max-->
+						<div id="MP_ally" class="num"></div>
+						/
+						<div id="MP_ally_max" class="num"></div>	
+					</div>
+					<!--MP progress bar-->
+					<div id="MP_ally_progress_bar" class="ally_bar">
+						<div class="ally_progress_bar"></div>
+					</div>
+				</div>
+
+			</div>
 		</div>
 	</div>
 </body>
+<!---->
 </html>

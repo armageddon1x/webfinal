@@ -108,6 +108,8 @@ $(document).ready(function(){
 	//counter for menu cycling
 	var i=0;
 
+	var animation;
+
 	function menu(){
 		//
 
@@ -144,6 +146,11 @@ $(document).ready(function(){
 			//click on skills menu to make attack
 			$("#batto").click(function(){
 				i=3;
+				animation=$("#yuzu_attack").show();
+				var a=setTimeout(function(){
+			      $('#yuzu_attack').hide();
+					},1700);
+
 			//this makes the skills menu disappear
 			$("#batto").addClass("none");
 			//this makes the next menu appear
@@ -151,7 +158,6 @@ $(document).ready(function(){
 		});
 		}else if(i===3){
 			console.log("3");
-			
 
 			//removes third menu
 			$("#options3").addClass("none");
