@@ -16,26 +16,42 @@ $(document).ready(function(){
 	var MP_ally=MP_ally_max;
 
 	//this checks for either enemy HP or ally HP is zero
-	function game(){
-		var gameUpdate = setTimeout(function(){
+	// function game(){
+	// 	var gameUpdate = setTimeout(function(){
 
-			console.log( "checking...");
-			menu();
-			submenu();
-			dragon();
+	// 		console.log( "checking...");
+	// 		menu();
+	// 		submenu();
+	// 		dragon();
 
-			if( HP_enemy <= 0 ){
-				alert( "You win");
-			}else if(HP_ally<=0){
-				alert('you lose');
-			}else{
-				game();
-			}
+	// 		if( HP_enemy <= 0 ){
+	// 			alert( "You win");
+	// 		}else if(HP_ally<=0){
+	// 			alert('you lose');
+	// 		}else{
+	// 			game();
+	// 		}
 
-		}, 5000)
+	// 	}, 5000)
+	// }
+
+	// game();
+
+//counter for menu cycling
+	var i=0;
+	var turn=0;
+	if (HP_enemy!==0 && HP_ally!==0){
+		menu();
+		submenu();
+		turn++;
+		alert(turn);
+		alert("HP enemy"+HP_enemy);
+		alert("HP ally"+HP_ally);
+	}else if (HP_enemy<=0){
+		alert("you win");
+	}else{
+		alert("you lose");
 	}
-
-	game();
 
 	//assigning values to the bar values
 	$("#HP_ally_max").html(HP_ally_max);
@@ -53,6 +69,7 @@ $(document).ready(function(){
 	//var enemy=true;
 	//var ally=true;
 
+/**************************************************************************/
 	//attack values (current attack stored here)
 	var attack_enemy;
 	var attack_ally;
@@ -105,161 +122,225 @@ $(document).ready(function(){
 	var titaniumblow_mana=5;
 	var goldensmash_mana=5;
 
-	//counter for menu cycling
-	var i=0;
+	
 
 	var animation;
 
+	// //this cycles through the menus
+	// function menu(){
+	// 	//
+
+	// 	if(i===0){
+	// 		console.log("0");
+	// 		i=1;
+	// 		//removes the none class from the first menu
+	// 		$("#options").removeClass("none");
+	// 	}else if (i===1){
+	// 		console.log("1");
+			
+	// 		//removes the first menu
+	// 		$("#options").addClass("none");
+	// 		//displays the skills menu
+	// 		$("#magic").removeClass("none");
+	// 		//click on skills menu to make attack
+	// 		$("#magic").click(function(){
+	// 			i=2;
+
+	// 		//this makes the skills menu disappear
+	// 		$("#magic").addClass("none");
+	// 		//this makes the next menu appear
+	// 		$("#options2").removeClass("none");
+	// 	});
+
+	// 	}else if(i===2){
+	// 		console.log("2");
+			
+
+	// 		//removes second menu
+	// 		$("#options2").addClass("none");
+	// 		//displays the skills menu
+	// 		$("#batto").removeClass("none");
+	// 		//click on skills menu to make attack
+	// 		$("#batto").click(function(){
+	// 			i=3;
+	// 			//attack animation
+	// 			$("#yuzu_attack").show();
+	// 			setTimeout(function(){
+	// 					$("#yuzu_attack").attr('src', 'gifs/attack/yuzu.gif');
+	// 		      $('#yuzu_attack').hide();
+	// 				},2050);
+
+	// 		//this makes the skills menu disappear
+	// 		$("#batto").addClass("none");
+	// 		//this makes the next menu appear
+	// 		$("#options3").removeClass("none");
+	// 	});
+	// 	}else if(i===3){
+	// 		console.log("3");
+
+	// 		//removes third menu
+	// 		$("#options3").addClass("none");
+	// 		//displays the skills menu
+	// 		$("#special").removeClass("none");
+	// 		//click on skills menu to make attack
+	// 		$("#special").click(function(){
+	// 			i=4;
+	// 		//this makes the skills menu disappear
+	// 		$("#special").addClass("none");
+	// 		//this makes the next menu appear
+	// 		$("#options4").removeClass("none");
+	// 		});
+	// 	}else{
+	// 		console.log("4");
+			
+	// 		//removes fourth menu
+	// 		$("#options4").addClass("none");
+	// 		//displays the skills menu
+	// 		$("#program").removeClass("none");
+	// 		//click on skills menu to make attack
+	// 		$("#program").click(function(){
+	// 			i=1;
+	// 		//this makes the skills menu disappear
+	// 		$("#program").addClass("none");
+	// 		//this makes the first menu appear again
+	// 		$("#options").removeClass("none");
+	// 		});
+	// 	};
+	// 	//
+	// };
+
+/**************************************************************************/
+	//this cycles through the menus
 	function menu(){
-		//
+		//begin
 
 		if(i===0){
-			console.log("0");
+
+			console.log("i is "+i);
+
+			//counter
 			i=1;
+
 			//removes the none class from the first menu
 			$("#options").removeClass("none");
+
 		}else if (i===1){
-			console.log("1");
+
+			console.log("i is "+i);
+
+			$("#magecraft").click(function(){
+				//removes the first menu
+				$("#options").addClass("none");
+				//displays the skills menu
+				$("#magic").removeClass("none");
+				//counter
+				i=2;
+			});
 			
-			//removes the first menu
-			$("#options").addClass("none");
-			//displays the skills menu
-			$("#magic").removeClass("none");
 			//click on skills menu to make attack
 			$("#magic").click(function(){
-				i=2;
 
-			//this makes the skills menu disappear
-			$("#magic").addClass("none");
-			//this makes the next menu appear
-			$("#options2").removeClass("none");
-		});
+				console.log("i is "+i);
 
-		}else if(i===2){
-			console.log("2");
+				//this makes the skills menu disappear
+				$("#magic").addClass("none");
+				//this makes the next menu appear
+				$("#options2").removeClass("none");
+				//counter
+				i=3;
+			});
+
+		}else if(i===3){
+
+			console.log("i is "+i);
+
+			$("#battojutsu").click(function(){
+				//removes second menu
+				$("#options2").addClass("none");
+				//displays the skills menu
+				$("#batto").removeClass("none");
+				//counter
+				i=4;
+			});
 			
-
-			//removes second menu
-			$("#options2").addClass("none");
-			//displays the skills menu
-			$("#batto").removeClass("none");
 			//click on skills menu to make attack
 			$("#batto").click(function(){
-				i=3;
 
+				console.log("i is "+i);
 
-
+				//attack animation
 				$("#yuzu_attack").show();
 				setTimeout(function(){
 						$("#yuzu_attack").attr('src', 'gifs/attack/yuzu.gif');
 			      $('#yuzu_attack').hide();
 					},2050);
+				//end animation
 
-			//this makes the skills menu disappear
-			$("#batto").addClass("none");
-			//this makes the next menu appear
-			$("#options3").removeClass("none");
-		});
-		}else if(i===3){
-			console.log("3");
+				//this makes the skills menu disappear
+				$("#batto").addClass("none");
+				//this makes the next menu appear
+				$("#options3").removeClass("none");
+				//counter
+				i=5;
+			});
 
-			//removes third menu
-			$("#options3").addClass("none");
-			//displays the skills menu
-			$("#special").removeClass("none");
+		}else if(i===5){
+
+			console.log("i is "+i);
+
+			$("#special_moves").click(function(){
+				//removes third menu
+				$("#options3").addClass("none");
+				//displays the skills menu
+				$("#special").removeClass("none");
+				//counter
+				i=6;
+			});
+			
 			//click on skills menu to make attack
 			$("#special").click(function(){
-				i=4;
-			//this makes the skills menu disappear
-			$("#special").addClass("none");
-			//this makes the next menu appear
-			$("#options4").removeClass("none");
+
+				console.log("i is "+i);
+
+				//this makes the skills menu disappear
+				$("#special").addClass("none");
+				//this makes the next menu appear
+				$("#options4").removeClass("none");
+				//counter
+				i=7;
 			});
+
 		}else{
-			console.log("4");
+
+			console.log("i is "+i);
+
+			$("#program_exe").click(function(){
+				//removes fourth menu
+				$("#options4").addClass("none");
+				//displays the skills menu
+				$("#program").removeClass("none");
+				//counter
+				i=8;
+			});
 			
-			//removes fourth menu
-			$("#options4").addClass("none");
-			//displays the skills menu
-			$("#program").removeClass("none");
 			//click on skills menu to make attack
 			$("#program").click(function(){
+
+				console.log("i is "+i);
+
+				//this makes the skills menu disappear
+				$("#program").addClass("none");
+				//this makes the first menu appear again
+				$("#options").removeClass("none");
+				//counter
 				i=1;
-			//this makes the skills menu disappear
-			$("#program").addClass("none");
-			//this makes the first menu appear again
-			$("#options").removeClass("none");
 			});
+
 		};
-
-
- 		//makes magic menu appear
-		// $("#magic").removeClass("none");
-
-		// //click on magic menu
-		// $("#magic").click(function(){
-		// 	//this makes magic menu disappear
-		// 	$("#magic").addClass("none");
-		// });
-		// if (i===1){
-		// 	console.log("i before equal "+i);
-		// 	i=2;
-		// 	console.log("i equal "+i);
-
-		// 	//makes magic menu appear
-		// 	$("#magic").removeClass("none");
-		// 	//click on magic menu
-		// 	$("#magic").click(function(){
-		// 		//this makes magic menu disappear
-		// 		$("#magic").addClass("none");
-		// 		$("#options").addClass("none");
-		// 		$("#options2").removeClass("none");
-		// 	});
-
-		// }else if(i===2){
-		// 	console.log("i before equal "+i);
-		// 	i=3;
-		// 	console.log("i equal "+i);
-
-		// 	//click on magic menu
-		// 	$("#battojutsu").click(function(){
-		// 		//this makes magic menu disappear
-		// 		$("#batto").addClass("none");
-		// 		$("#options2").addClass("none");
-		// 		$("#options").removeClass("none");
-		// 	});
-
-		// }else if (i===3){
-		// 	console.log("i before equal "+i);
-		// 	i=4;
-		// 	console.log("i equal "+i);
-
-		// 	//click on magic menu
-		// 	$("#special").click(function(){
-		// 		//this makes magic menu disappear
-		// 		$("#special").addClass("none");
-		// 		$("#options3").addClass("none");
-		// 		$("#options4").removeClass("none");
-		// 	});
-
-		// }else{
-		// 	console.log("i before equal "+i);
-		// 	i=1;
-		// 	console.log("i equal "+i);
-
-		// 	$("#program").removeClass("none");
-		// 	//click on magic menu
-		// 	$("#program").click(function(){
-		// 		//this makes magic menu disappear
-		// 		$("#program").addClass("none");
-		// 		$("#options4").addClass("none");
-		// 		$("#options").removeClass("none");
-		// 	});
-		// };
-
-		//
+		//end
 	};
 
+/**************************************************************************/
 	//clicking first on the magic selector and then click on the spell to use
 	function submenu(){
 		//selects the second child from the options menu since those lead to 
@@ -318,6 +399,7 @@ $(document).ready(function(){
 
 	var dragon_attack;
 
+/**************************************************************************/
 	function dragon(){
 		//beginning
 
@@ -354,49 +436,14 @@ $(document).ready(function(){
 		//end
 	};
 
-	//click on fire, attack executes
-	/*$("#fire").click(function(){
-		console.log("before attack "+HP_enemy);
-		console.log("mana reserve: "+MP_ally);
-		alert("cast Fire");
-		//the attack value becomes the move that was chosen for the turn
-		attack_ally=fire;
-
-		//loss of enemy HP
-		HP_enemy=HP_enemy-attack_ally;
-		console.log("after attack "+HP_enemy);
-
-		//mana usage
-		MP_ally=MP_ally-fire_mana;
-		console.log("MP remaining: "+MP_ally)
-
-		console.log("hp enemy "+HP_enemy);
-		console.log("hp enemy max "+HP_enemy_max);
-		console.log("ratio"+((HP_enemy*100)/HP_enemy_max));
-
-		//update HP and MP meters
-		$("#MP_ally").html(MP_ally);
-		$("#HP_enemy").html(HP_enemy);
-		progress(MP_ally, $('#MP_ally_progress_bar'));
-		progress(((HP_enemy*100)/HP_enemy_max), $("#HP_enemy_progress_bar"));
-
-		//check to see if enemy has zero HP or less
-		if (HP_enemy<0){
-			alert("you defeated the enemy")
-		};
-
-		//check to see if ally has zero MP or less
-		if (MP_ally<0){
-			alert("not enough MP")
-		};
-	});*/
-
+/**************************************************************************/
 	//progress bar
 	function progress(percent, $element) {
     var progress_bar_width=percent*$element.width()/100;
     $element.find('div').animate({width: progress_bar_width});
 	}
 
+/**************************************************************************/
 	//audio loop
 	// var audio_file = new Audio('sounds/bgm.mp3');
 	// audio_file.play();
