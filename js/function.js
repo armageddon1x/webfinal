@@ -421,6 +421,32 @@ $(document).ready(function(){
 
 			//runs menu function for menu cycling
 			menu();
+			var name;
+			$('.submenu li').hover(function(){
+				name=$(this).attr("id");
+				$('#description').show();
+		 	  $('#'+name+"_des").show();
+		 	  // alert("show"+name);
+			}, function(){
+				name=$(this).attr("id");
+				$('#'+name+"_des").hide();
+				$('#description').hide();
+		 	  
+		 	  // alert("hide"+name);
+			});
+
+			// $('.submenu li').hover(function() {
+			// 	var name=$(this).attr("id");
+		 //    clearTimeout($(this).data('timeout'));
+		 //    $('#description').show();
+		 //    $('#'+name+"_des").show();
+			// }, function() {
+		 //    var t = setTimeout(function() {
+		 //        $('#description').hide();
+		 //        $('#'+name+"_des").hide();
+		 //    }, 2000);
+		 //    $(this).data('timeout', t);
+			// });
 
 			//this get the attack name once you click on the attack
 			$(".submenu li").click(function(){
@@ -458,7 +484,7 @@ $(document).ready(function(){
 				};
 
 				//izanagi's attacks
-				if(attack==="Swordslash"){
+				if(attack==="Sword Slash"){
 					attack="<ruby>"+attack+"<rt style='font-size:14px;'>Dimensional Rift</rt></ruby>!!!";
 				};
 				if(attack==="Blade Barrage"){
