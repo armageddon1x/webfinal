@@ -51,43 +51,43 @@ $(document).ready(function(){
 	var MP_justice=MP_justice_max;
 
 	//this checks for either enemy HP or ally HP is zero
-	function game(){
-		var gameUpdate = setTimeout(function(){
+	// function game(){
+	// 	var gameUpdate = setTimeout(function(){
 
-			console.log( "checking...");
-			menu();
-			submenu();
-			dragon();
+	// 		console.log( "checking...");
+	// 		menu();
+	// 		submenu();
+	// 		dragon();
 
-			if( HP_enemy <= 0 ){
-				alert( "You win");
-			}else if(HP_ally<=0){
-				alert('you lose');
-			}else{
-				game();
-			}
+	// 		if( HP_enemy <= 0 ){
+	// 			alert( "You win");
+	// 		}else if(HP_ally<=0){
+	// 			alert('you lose');
+	// 		}else{
+	// 			game();
+	// 		}
 
-		}, 5000)
-	}
+	// 	}, 5000)
+	// }
 
-	game();
+	// game();
 
 //counter for menu cycling
 	var i=0;
 	var turn=0;
 
-// 	if (HP_enemy >= 0 && HP_ally >= 0){
-// 		turn++;
-// 		alert("turn: "+turn);
+	if (HP_enemy >= 0 && HP_ally >= 0){
+		turn++;
+		console.log("turn: "+turn);
 
-// 		menu();
-// 		submenu();
-// 		dragon();
+		menu();
+		submenu();
+		// dragon();
 
-// 		console.log(HP_enemy);
-// 		console.log(HP_ally);
+		console.log(HP_enemy);
+		console.log(HP_ally);
 
-// };
+};
 
 	// if (HP_enemy!==0 && HP_ally!==0){
 	// 	menu();
@@ -319,12 +319,15 @@ $(document).ready(function(){
 				},2050);
 				setTimeout(function(){
 					$("#shun").show();
+					$("#shun").css("display","block");
 					},4500);
 				setTimeout(function(){
 					$("#ten").show();
+					$("#ten").css("display","block");
 					},5000);
 				setTimeout(function(){
 					$("#satsu").show();
+					$("#satsu").css("display","block");
 					},5500);
 				setTimeout(function(){
 					$("#yuzu_box").css("background","black");
@@ -600,6 +603,27 @@ $(document).ready(function(){
 
 				$("#HP_enemy").html(HP_enemy);
 
+				if(MP_ragna<=50){
+					$("#MP_ragna").css("color","yellow");
+				}else if(MP_ragna<=30){
+					$("#MP_ragna").css("color","orange");
+				}else if(MP_ragna<=10){
+					$("#MP_ragna").css("color","red");
+				}else if(MP_ragna<=0){
+					$("#MP_ragna").css("color","black");
+					MP_ragna=0;
+				};
+
+				if(MP_yuzuriha<=0){
+					MP_ragna=0;
+				};
+				if(MP_izanagi<=0){
+					MP_ragna=0;
+				};
+				if(MP_justice<=0){
+					MP_ragna=0;
+				};
+
 				//progress bar for meters
 				// progress(MP_ally, $('.MP_ally_progress_bar'));
 
@@ -699,13 +723,13 @@ $(document).ready(function(){
 	//listens to audio, triggers when the audio gets to a certain time
 	audio_file.addEventListener('timeupdate', function(){
 		//buffer for the loop to start
-		var buffer = 3.381
+		var buffer = 3.39
 		//this loop stops playing at the time that is determined by the duration
 		//of the song minus the buffer, then it starts the song again at a set
 		//time ,making the loop complete
 		if(this.currentTime>(this.duration-buffer)){
 				//start of new loop
-		    this.currentTime = 24.9
+		    this.currentTime = 24.5
 		    //plays song
 		    this.play()
 		    console.log(this.currentTime);

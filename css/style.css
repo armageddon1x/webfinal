@@ -77,13 +77,12 @@
 #lightbox{background: rgba(0,0,0,.5);}
 #yuzu_box{background: pink;,text-align: center;}
 #shun, #ten, #satsu{
-	height:35%;
+	height:30%;
+	width: auto;
 	vertical-align: bottom;
 	position: relative;
-	z-index:40;
 	margin: 0 auto;
-	display: block;
-	display: none;
+	z-index:40;
 }
 #yuzu_batto{position: relative;margin-top: -50px;}
 
@@ -99,7 +98,6 @@
 	text-align: center;
 	border-bottom: 2px solid white;
 }
-
 #description p{
 	padding: 20px 0;
 	font-size: 20px;
