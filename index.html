@@ -8,23 +8,41 @@
 	<script type="text/javascript" src="js/function.js"></script>
 </head>
 <body>
-
+	<!---->
+	<!--battle section-->
 	<div id="battle">
+		<!--message that pops up with the attack name-->
 		<div id="message" class="none">
+			<!--what goes inside the message-->
 			<p></p>
 		</div>
-
+		<!--what's on the field-->
 		<div id="field">
-			<img id="yuzu_attack" style="width:78%;position:absolute;right:0px;z-index:10;display:none;"src="gifs/attack/yuzu.gif">
+			<!--initial yuzuriha attack-->
+			<img id="yuzu_attack" class="none" src="gifs/attack/yuzu.gif">
 			<div id="lightbox" class="none"></div>
-
+			<div id="yuzu_box" class="none">
+				<img id="yuzu_batto" class="none" src="gifs/attack/batto.gif">
+			</div>
+				<img id="shun" class="none" src="images/attack/shun.png"><br>
+				<img id="ten" class="none" src="images/attack/ten.png"><br>
+				<img id="satsu" class="none" src="images/attack/satsu.png">
+			
+			<!--enemy sprite section-->
 			<div id="test">
+				<!--dragon-->
 				<img style="width:96%;margin-top:-100px;" src="images/dragon.png">
 			</div>
+
+			<!--ally sprite section-->
 			<div id="player">
+				<!--ragna sprite-->
 				<img style="height:200px;display:block;margin-left:120px;margin-top:10%;" src="gifs/ragna.gif">
+				<!--yuzuriha sprite-->
 				<img style="height:250px;display:block;margin-top:-40%;margin-left:100px;" src="gifs/yuzuriha.gif">
+				<!--izanagi sprite-->
 				<img style="height:300px;display:block;margin-top:-175px;" src="gifs/izanagi.gif">
+				<!--justice sprite-->
 				<img style="height:300px;display:block;margin-top:-40%;margin-left:150px;" src="gifs/justice.gif">
 			</div>
 

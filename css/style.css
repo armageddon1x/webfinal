@@ -61,14 +61,31 @@
 	padding: 20px 0;
 	font-size: 40px;
 }
-#lightbox{
-	background: rgba(0,0,0,.5);
+#yuzu_attack{
+	width:78%;
+	position:absolute;
+	right:0px;
+	z-index:15;
+}
+#lightbox, #yuzu_box{
 	width:100%;
 	height: 78vh;
 	position:absolute;
 	right:0px;
-	z-index:9;
+	z-index:10;
 }
+#lightbox{background: rgba(0,0,0,.5);}
+#yuzu_box{background: pink;,text-align: center;}
+#shun, #ten, #satsu{
+	height:35%;
+	vertical-align: bottom;
+	position: relative;
+	z-index:40;
+	margin: 0 auto;
+	display: block;
+	display: none;
+}
+#yuzu_batto{position: relative;margin-top: -50px;}
 
 #description{
 	position: absolute;

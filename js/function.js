@@ -51,43 +51,43 @@ $(document).ready(function(){
 	var MP_justice=MP_justice_max;
 
 	//this checks for either enemy HP or ally HP is zero
-	// function game(){
-	// 	var gameUpdate = setTimeout(function(){
+	function game(){
+		var gameUpdate = setTimeout(function(){
 
-	// 		console.log( "checking...");
-	// 		menu();
-	// 		submenu();
-	// 		dragon();
+			console.log( "checking...");
+			menu();
+			submenu();
+			dragon();
 
-	// 		if( HP_enemy <= 0 ){
-	// 			alert( "You win");
-	// 		}else if(HP_ally<=0){
-	// 			alert('you lose');
-	// 		}else{
-	// 			game();
-	// 		}
+			if( HP_enemy <= 0 ){
+				alert( "You win");
+			}else if(HP_ally<=0){
+				alert('you lose');
+			}else{
+				game();
+			}
 
-	// 	}, 5000)
-	// }
+		}, 5000)
+	}
 
-	// game();
+	game();
 
 //counter for menu cycling
 	var i=0;
 	var turn=0;
 
-	if (HP_enemy >= 0 && HP_ally >= 0){
-		turn++;
-		alert("turn: "+turn);
+// 	if (HP_enemy >= 0 && HP_ally >= 0){
+// 		turn++;
+// 		alert("turn: "+turn);
 
-		menu();
-		submenu();
-		dragon();
+// 		menu();
+// 		submenu();
+// 		dragon();
 
-		console.log(HP_enemy);
-		console.log(HP_ally);
+// 		console.log(HP_enemy);
+// 		console.log(HP_ally);
 
-};
+// };
 
 	// if (HP_enemy!==0 && HP_ally!==0){
 	// 	menu();
@@ -310,9 +310,34 @@ $(document).ready(function(){
 				setTimeout(function(){
 						$("#yuzu_attack").attr('src', 'gifs/attack/yuzu.gif');
 			      $('#yuzu_attack').hide();
-			      $("#lightbox").hide();
 			      $("#message").hide();
+			      $("#lightbox").hide();
 					},2050);
+				setTimeout(function(){
+					$("#yuzu_box").show();
+					$("#yuzu_batto").show();
+				},2050);
+				setTimeout(function(){
+					$("#shun").show();
+					},4500);
+				setTimeout(function(){
+					$("#ten").show();
+					},5000);
+				setTimeout(function(){
+					$("#satsu").show();
+					},5500);
+				setTimeout(function(){
+					$("#yuzu_box").css("background","black");
+					},6000);
+				setTimeout(function(){
+					$("#yuzu_batto").attr('src', 'gifs/attack/batto.gif');
+					$("#yuzu_box").hide();
+					$("#shun").hide();
+					$("#ten").hide();
+					$("#satsu").hide();
+					$("#yuzu_box").css("background","pink");
+				},6500);
+				
 				//end animation
 
 				//this makes the skills menu disappear
@@ -566,17 +591,25 @@ $(document).ready(function(){
 				// console.log("hp enemy max "+HP_enemy_max);
 				// console.log("ratio"+((HP_enemy*100)/HP_enemy_max));
 
-				//update enemy HP meter
+				//update enemy HP number
+
+				//sets enemy HP to zero if it's at zero or below to avoid negative HP
+				if(HP_enemy<=0){
+					HP_enemy=0;
+				};
+
 				$("#HP_enemy").html(HP_enemy);
 
 				//progress bar for meters
 				// progress(MP_ally, $('.MP_ally_progress_bar'));
 
+				//progress bar for ally MP
 				progress(MP_ragna, $("#ragna_mp"));
 				progress(MP_yuzuriha, $("#yuzu_mp"));
 				progress(MP_izanagi, $("#iza_mp"));
 				progress(MP_justice, $("#just_mp"));
 
+				//progress bar for enemy HP
 				progress(((HP_enemy*100)/HP_enemy_max), $("#HP_enemy_progress_bar"));
 
 				//end
@@ -587,6 +620,7 @@ $(document).ready(function(){
 	};
 
 	var dragon_attack;
+	var dragon_name;
 
 /**************************************************************************/
 	function dragon(){
@@ -610,16 +644,40 @@ $(document).ready(function(){
 
 		//dark purge from 0-6
 		if (x<7){
-			console.log("dark purge")
+			console.log("dark purge");
+			dragon_attack="Dark Purge";
+			$("#message").show();
+			$("#message p").html("Chaos Dragon gathers its energy!"+"Chaos Arts!!!"+"<br>"+dragon_attack);
+			setTimeout(function(){
+		      $("#message").hide();
+				},2050);	
 		//starfall from 7-11
 		}else if(x>6&&x<12){
-			console.log("starfall")
+			console.log("starfall");
+			dragon_attack="Starfall";
+			$("#message").show();
+			$("#message p").html("Chaos Dragon gathers its energy!"+"Chaos Arts!!!"+"<br>"+dragon_attack);
+			setTimeout(function(){
+		      $("#message").hide();
+				},2050);	
 		//grand cross from 12-14
 		}else if(x>11&&x<15){
-			console.log("grand cross")
+			console.log("grand cross");
+			dragon_attack="Grand Cross";
+			$("#message").show();
+			$("#message p").html("Chaos Dragon gathers its energy!"+"Chaos Arts!!!"+"<br>"+dragon_attack);
+			setTimeout(function(){
+		      $("#message").hide();
+				},2050);			
 		//armageddon is 15
 		}else{
-			console.log("armageddon")
+			console.log("armageddon");
+			dragon_attack="Armageddon";
+			$("#message").show();
+			$("#message p").html("Chaos Dragon gathers its energy!"+"Chaos Arts!!!"+"<br>"+dragon_attack);
+			setTimeout(function(){
+		      $("#message").hide();
+				},2050);	
 		};
 
 		//end
@@ -634,18 +692,27 @@ $(document).ready(function(){
 
 /**************************************************************************/
 	//audio loop
-	// var audio_file = new Audio('sounds/bgm.mp3');
-	// audio_file.play();
-	// audio_file.addEventListener('timeupdate', function(){
- //  var buffer = 4
- //  if(this.currentTime>(this.duration-buffer)){
- //      this.currentTime = 25
- //      this.play()
- //      console.log(this.currentTime);
- //      console.log(this.duration-buffer);
- //      console.log(this.duration);
- //      console.log(buffer);
- //  }}, false);
+	//load audio
+	var audio_file = new Audio('sounds/bgm.mp3');
+	//play audio at page start
+	audio_file.play();
+	//listens to audio, triggers when the audio gets to a certain time
+	audio_file.addEventListener('timeupdate', function(){
+		//buffer for the loop to start
+		var buffer = 3.381
+		//this loop stops playing at the time that is determined by the duration
+		//of the song minus the buffer, then it starts the song again at a set
+		//time ,making the loop complete
+		if(this.currentTime>(this.duration-buffer)){
+				//start of new loop
+		    this.currentTime = 24.9
+		    //plays song
+		    this.play()
+		    console.log(this.currentTime);
+		    console.log(this.duration-buffer);
+		    console.log(this.duration);
+		    console.log(buffer);
+		}}, false);
 
 	//end
 });
