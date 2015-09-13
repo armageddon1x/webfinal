@@ -1,0 +1,293 @@
+*{color: white;font-family: "Open Sans";}
+
+/*useful classes to remove certain attributes*/
+.cover{padding: 0;margin: 0;}
+.none{display: none;}
+.inline_block{display: inline-block;}
+
+/*the section where the gifs, animations, and popups will be*/
+#battle{
+	background: gray;
+	height: 75vh;
+}
+
+/*the section where the menu and lifebars etc. will be*/
+#info{
+	/*gradient*/
+	background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0, #000000),
+	color-stop(1, #333333)
+	);
+	background-image: -o-linear-gradient(bottom, #000000 0%, #222222 100%);
+	background-image: -moz-linear-gradient(bottom, #000000 0%, #222222 100%);
+	background-image: -webkit-linear-gradient(bottom, #000000 0%, #222222 100%);
+	background-image: -ms-linear-gradient(bottom, #000000 0%, #222222 100%);
+	background-image: linear-gradient(to bottom, #000000 0%, #222222 100%);
+	/*gradient*/
+	height: 25vh;
+	overflow: hidden;
+}
+
+/*enemy name and lifebar*/
+#enemy{
+	height: 50%;
+}
+
+/*ally name and lifebar*/
+#ally{
+	height: 25%;
+}
+
+/*menu*/
+.menu{height: 100%;}
+/*the options in the menu, 1-4*/
+
+/*.menu_option{
+	height:25%;
+	text-indent: 20px;
+	border-bottom: 2px solid rgb(40,40,40);
+}*/
+
+.menu div{
+	height:25%;
+	text-indent: 20px;
+	border-bottom: 3px solid rgb(60,60,60);
+	cursor: pointer;
+	font-size: 1.2em;
+}
+
+/*effects for when you hover on a menu option*/
+
+/*.menu_option:hover{
+	background: black;
+	color: #33AAFF;
+}*/
+
+.menu div:hover{
+	background: black;
+}
+
+#option_1 div:hover{
+	color: #33AAFF;
+	border-bottom: 3px solid #33AAFF;
+}
+#option_2 div:hover{
+	color: #9600A8;
+	border-bottom: 3px solid #9600A8;
+}
+#option_3 div:hover{
+	color: #EDD30C;
+	border-bottom: 3px solid #EDD30C;
+}
+#option_4 div:hover{
+	color: #85827A;
+	border-bottom: 3px solid #85827A;
+}
+
+#fire:hover{
+	color: red;
+	border-bottom: 3px solid red;
+}
+#water:hover{
+	color: blue;
+	border-bottom: 3px solid blue;
+}
+#air:hover{
+	color: white;
+	border-bottom: 3px solid white;
+}
+#earth:hover{
+	color: #50321E;
+	border-bottom: 3px solid #50321E;
+}
+#batto div:hover{
+	color: #FFC0CB	;
+	border-bottom: 3px solid #FFC0CB;
+}
+#special div:hover{
+	color: orange	;
+	border-bottom: 3px solid orange;
+}
+#program div:hover{
+	color: #E3DFD1;
+	border-bottom: 3px solid #E3DFD1;
+}
+
+/*name section*/
+.name{height: 100%;border-bottom: 1px rgb(60,60,60) solid;}
+.title{height:60%;text-indent:20px;font-size: 1.5em;/*background:red;*/}
+.subtitle{height:40%;text-indent:20px;font-size:.9em;/*background: orange;*/}
+
+
+/*number section*/
+.number{
+	height: 100%;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 1px rgb(60,60,60) solid;
+	/*background: green;*/
+	/*position:relative;*/
+	/*background: purple;*/
+}
+/*number HP and MP sections*/
+.num_HP, .num_MP{
+	height: 50%;
+	/*border-bottom: 1px solid blue;*/
+	/*text-indent: 10px;*/
+	/*padding-top: 2%;*/
+	width: 100%;
+	font-size: 1.2em;
+}
+.num_HP{/*bottom:50%;*//*background: pink;*//*position: absolute;*/}
+.num_MP{/*bottom:0;*//*background: gray;*//*position: absolute;*/}
+
+.enemy_num{font-size: 1.25em;/*position:relative;*//*border-bottom: 1px blue solid;background: gray;*/}
+
+
+/*HP*/
+.number_HP{
+	color: green;
+	/*background: black;*/
+/*	bottom: 50%;*/
+}
+/*MP*/
+.number_MP{
+	color: blue;
+	/*background: black;*/
+/*	bottom: 0;*/
+}
+
+
+.enemy_number_HP{color: red;position: absolute;bottom: 50%;}
+.enemy_number_MP{color: purple;position: absolute;bottom: 0;}
+/*lifebar section*/
+#lifebar{
+	height: 100%;
+	padding-right:2%;
+	border-bottom: 1px rgb(60,60,60) solid;
+	/*background:white;*/
+}
+/*HP/MP bar*/
+.bar{
+	height: 50%;
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid transparent;
+}
+
+.HP_bar,.MP_bar{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.HP_bar{
+	border-bottom: 2px solid #008704;
+	border-right: 2px solid #008704;
+	/*background: red;*/
+}
+.MP_bar{
+	border-bottom: 2px solid #000287;
+	border-right: 2px solid #000287;
+	/*background: white;*/
+}
+
+.enemy_HP_bar{
+	border-bottom: 6px solid #990800;
+	border-right: 6px solid #990800;
+}
+.enemy_MP_bar{
+	border-bottom: 6px solid #570066;
+	border-right: 6px solid #570066;
+}
+/*HP/MP bar progression*/
+.HP_progress, .MP_progress{
+	width:100%;
+	height: 60%;
+	position: absolute;
+	bottom: 0;
+}
+/*HP and MP progression colors*/
+.HP_progress{
+	/* IE10+ */ 
+	background-image: -ms-linear-gradient(top right, #17FF93 0%, #24B020 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top right, #17FF93 0%, #24B020 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(top right, #17FF93 0%, #24B020 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #17FF93), color-stop(100, #24B020));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top right, #17FF93 0%, #24B020 100%);
+
+	/* W3C Markup */ 
+	background-image: linear-gradient(to bottom left, #17FF93 0%, #24B020 100%);
+}
+.MP_progress{
+	/* IE10+ */ 
+	background-image: -ms-linear-gradient(top right, #33C0D6 0%, #0D6A70 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top right, #33C0D6 0%, #0D6A70 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(top right, #33C0D6 0%, #0D6A70 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #33C0D6), color-stop(100, #0D6A70));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top right, #33C0D6 0%, #0D6A70 100%);
+
+	/* W3C Markup */ 
+	background-image: linear-gradient(to bottom left, #33C0D6 0%, #0D6A70 100%);
+}
+
+/*enemy properties*/
+
+.enemy_HP_progress{
+	/* IE10+ */ 
+	background-image: -ms-linear-gradient(bottom left, #FF1717 0%, #FF7A7A 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(bottom left, #FF1717 0%, #FF7A7A 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(bottom left, #FF1717 0%, #FF7A7A 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, #FF1717), color-stop(100, #FF7A7A));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(bottom left, #FF1717 0%, #FF7A7A 100%);
+
+	/* W3C Markup */ 
+	background-image: linear-gradient(to top right, #FF1717 0%, #FF7A7A 100%);
+}
+/*enemy properties*/
+
+.enemy_MP_progress{
+	/* IE10+ */ 
+	background-image: -ms-linear-gradient(bottom left, #8300B3 0%, #E08CFF 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(bottom left, #8300B3 0%, #E08CFF 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(bottom left, #8300B3 0%, #E08CFF 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, #8300B3), color-stop(100, #E08CFF));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(bottom left, #8300B3 0%, #E08CFF 100%);
+
+	/* W3C Markup */ 
+	background-image: linear-gradient(to top right, #8300B3 0%, #E08CFF 100%);
+}

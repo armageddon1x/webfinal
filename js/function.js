@@ -1,3 +1,5 @@
+//make a rewrite with more dynamic functions.......later
+
 $(document).ready(function(){
 	//beginning
 
@@ -51,26 +53,26 @@ $(document).ready(function(){
 	var MP_justice=MP_justice_max;
 
 	//this checks for either enemy HP or ally HP is zero
-	// function game(){
-	// 	var gameUpdate = setTimeout(function(){
+	function game(){
+		var gameUpdate = setTimeout(function(){
 
-	// 		console.log( "checking...");
-	// 		menu();
-	// 		submenu();
-	// 		dragon();
+			console.log( "checking...");
+			// menu();
+			// submenu();
+			// dragon();
 
-	// 		if( HP_enemy <= 0 ){
-	// 			alert( "You win");
-	// 		}else if(HP_ally<=0){
-	// 			alert('you lose');
-	// 		}else{
-	// 			game();
-	// 		}
+			if( HP_enemy <= 0 ){
+				alert( "You win");
+			}else if(HP_ally<=0){
+				alert('you lose');
+			}else{
+				game();
+			}
 
-	// 	}, 5000)
-	// }
+		}, 51000)
+	}
 
-	// game();
+	game();
 
 //counter for menu cycling
 	var i=0;
@@ -285,6 +287,7 @@ $(document).ready(function(){
 		}else if(i===3){
 
 			console.log("i is "+i);
+			dragon();
 
 			$("#battojutsu").click(function(){
 				//removes second menu
@@ -354,6 +357,7 @@ $(document).ready(function(){
 		}else if(i===5){
 
 			console.log("i is "+i);
+			dragon();
 
 			$("#special_moves").click(function(){
 				//removes third menu
@@ -395,6 +399,7 @@ $(document).ready(function(){
 		}else{
 
 			console.log("i is "+i);
+			dragon();
 
 			$("#program_exe").click(function(){
 				//removes fourth menu
@@ -481,6 +486,9 @@ $(document).ready(function(){
 				var attack_name=$(this).attr("id");
 				var attack_person=$(this).attr("class")
 				attack=$(this).html();
+				console.log(attack_name);
+				console.log(attack_person);
+				console.log(attack);
 
 				//adding ruby text to attack names
 				//ragna's attacks
@@ -597,9 +605,19 @@ $(document).ready(function(){
 				//update enemy HP number
 
 				//sets enemy HP to zero if it's at zero or below to avoid negative HP
-				if(HP_enemy<=0){
+				if(HP_enemy<=250&&HP_enemy>=150){
+					$("#HP_enemy").css("color","yellow");
+				}else if(HP_enemy<=150&&HP_enemy>=75){
+					$("#HP_enemy").css("color","orange");
+				}else if(HP_enemy<=75&&HP_enemy>=0){
+					$("#HP_enemy").css("color","red");
+				}else if(HP_enemy<=0){
 					HP_enemy=0;
-				};
+					("#HP_enemy").css("color","black");
+				}
+				// if(HP_enemy<=0){
+				// 	HP_enemy=0;
+				// };
 
 				$("#HP_enemy").html(HP_enemy);
 
@@ -638,29 +656,29 @@ $(document).ready(function(){
 
 				//end
 
-				$("#magic").addClass("none");
 			});
 		});
 	};
 
 	var dragon_attack;
 	var dragon_name;
+	var d_atk;
 
 /**************************************************************************/
 	function dragon(){
 		//beginning
 
 		//dragon attacks
-		var dark_purge=50;			//selector numbers will be 0,1,2,3,4,5,6
-		var starfall=75;				//7,8,9,10,11
-		var grand_cross=100;		//12,13,14
-		var armageddon=200;			//15
+		var dark_purge=5;			//selector numbers will be 0,1,2,3,4,5,6
+		var starfall=15;				//7,8,9,10,11
+		var grand_cross=30;		//12,13,14
+		var armageddon=50;			//15
 
 		//dragon mana costs
-		var dark_purge=50;
-		var starfall=75;
-		var grand_cross=100;
-		var armageddon=200;
+		var dark_purge_mana=10;
+		var starfall_mana=10;
+		var grand_cross_mana=10;
+		var armageddon_mana=20;
 
 		//selects random number for launching attack
 		var x = Math.floor((Math.random() * 15));
@@ -670,8 +688,9 @@ $(document).ready(function(){
 		if (x<7){
 			console.log("dark purge");
 			dragon_attack="Dark Purge";
+			d_atk=dark_purge;
 			$("#message").show();
-			$("#message p").html("Chaos Dragon gathers its energy!"+"Chaos Arts!!!"+"<br>"+dragon_attack);
+			$("#message p").html("Chaos Dragon gathers its energy! "+"Chaos Arts!!!"+"<br>"+dragon_attack);
 			setTimeout(function(){
 		      $("#message").hide();
 				},2050);	
@@ -679,8 +698,9 @@ $(document).ready(function(){
 		}else if(x>6&&x<12){
 			console.log("starfall");
 			dragon_attack="Starfall";
+			d_atk=starfall;
 			$("#message").show();
-			$("#message p").html("Chaos Dragon gathers its energy!"+"Chaos Arts!!!"+"<br>"+dragon_attack);
+			$("#message p").html("Chaos Dragon gathers its energy! "+"Chaos Arts!!!"+"<br>"+dragon_attack);
 			setTimeout(function(){
 		      $("#message").hide();
 				},2050);	
@@ -688,8 +708,9 @@ $(document).ready(function(){
 		}else if(x>11&&x<15){
 			console.log("grand cross");
 			dragon_attack="Grand Cross";
+			d_atk=grand_cross;
 			$("#message").show();
-			$("#message p").html("Chaos Dragon gathers its energy!"+"Chaos Arts!!!"+"<br>"+dragon_attack);
+			$("#message p").html("Chaos Dragon gathers its energy! "+"Chaos Arts!!!"+"<br>"+dragon_attack);
 			setTimeout(function(){
 		      $("#message").hide();
 				},2050);			
@@ -697,12 +718,33 @@ $(document).ready(function(){
 		}else{
 			console.log("armageddon");
 			dragon_attack="Armageddon";
+			d_atk=armageddon;
 			$("#message").show();
-			$("#message p").html("Chaos Dragon gathers its energy!"+"Chaos Arts!!!"+"<br>"+dragon_attack);
+			$("#message p").html("Chaos Dragon gathers its energy! "+"Chaos Arts!!!"+"<br>"+dragon_attack);
 			setTimeout(function(){
 		      $("#message").hide();
 				},2050);	
 		};
+
+		console.log("Ragna HP: "+HP_ragna);
+		HP_ragna=HP_ragna-eval(d_atk);
+		console.log("Ragna HP: "+HP_ragna);
+
+		console.log("Yuzu HP: "+HP_yuzuriha);
+		HP_yuzuriha=HP_yuzuriha-eval(d_atk);
+		console.log("yuzu HP: "+HP_yuzuriha);
+		HP_izanagi=HP_izanagi-eval(d_atk);
+		HP_justice=HP_justice-eval(d_atk);
+
+		progress(HP_ragna, $("#ragna_hp"));
+		progress(HP_yuzuriha, $("#yuzu_hp"));
+		progress(HP_izanagi, $("#iza_hp"));
+		progress(HP_justice, $("#just_hp"));
+
+
+		$("#MP_enemy").html(MP_enemy);
+		progress(MP_enemy, $("#MP_enemy_progress_bar"));
+		console.log(MP_enemy);
 
 		//end
 	};

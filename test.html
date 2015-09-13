@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Battle Sequence</title>
+	<!--Open Sans font-->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<!--CSS includes-->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/game.css">
+	<!--JS includes-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/game.js"></script>
+</head>
+<!---->
+<body>
+	<!--container-->
+	<div class="container-fluid cover">
+<!--*********************************************************************-->
+<!--battle-->
+<!--*********************************************************************-->
+		<!--first row, battlefield-->
+		<div class="row cover">
+			<!--where the battle animations and sprites will be-->
+			<div id="battle">
+			</div>
+		</div>
+<!--*********************************************************************-->
+<!--menus, etc.-->
+<!--*********************************************************************-->
+		<!--second row, menus and life bars-->
+		<div class="row cover">
+			<!--where all the menu, lifebars, etc. will be-->
+			<div id="info">
+
+<!--*********************************************************************-->
+<!--enemy-->
+<!--*********************************************************************-->
+				<!--enemy section-->
+				<div id="enemy" class="col-lg-6 cover">
+
+					<div class="col-lg-4 cover name">
+						<!--name-->
+						<div class="title" style="font-size:3em;">Abraxas</div>
+						<!--subtitle-->
+						<div class="subtitle" style="font-size:1.4em;">Engine of Destruction</div>
+					</div>
+
+					<!--numbers-->
+					<div class="col-lg-2 cover number">
+
+						<!--HP numbers-->
+						<div class="num_HP">
+							<!--HP current-->
+							<span id="HP_enemy" class="number_HP enemy_number_HP enemy_num" style="left:0;"></span>
+							<span style="position:absolute;left:47%;bottom:50%;font-size: 1.25em;">/</span>
+							<!--HP max-->
+							<span id="HP_enemy_max"class="number_HP enemy_number_HP enemy_num" style="right:0;"></span>
+						</div>
+
+						<!--MP numbers-->
+						<div class="num_MP">
+							<!--MP current-->
+							<span id="MP_enemy" class="number_MP enemy_number_MP enemy_num" style="left:0;"></span>
+							<span style="position:absolute;left:47%;bottom:0;font-size: 1.25em;">/</span>
+							<!--MP max-->
+							<span id="MP_enemy_max" class="number_MP enemy_number_MP enemy_num" style="right:0;"></span>
+						</div>
+
+					</div>
+
+					<!--lifebar-->
+					<div id="lifebar" class="col-lg-6">
+						<!--HP bar-->
+						<div class="bar">
+							<div id="HP_bar_enemy" class="HP_bar enemy_HP_bar">
+								<!--HP bar progress-->
+								<div class="HP_progress enemy_HP_progress"></div>
+							</div>
+						</div>
+						
+						<!--MP bar-->
+						<div class="bar">
+							<div id="MP_bar_enemy" class="MP_bar enemy_MP_bar">
+							<!--MP bar progress-->
+							<div class="MP_progress enemy_MP_progress"></div>
+						</div>
+						</div>
+						
+					</div>				
+				</div>
+
+<!--*********************************************************************-->
+<!--menus-->
+<!--*********************************************************************-->
+
+				<!--menu section-->
+				<!--placeholder-->
+				<div id="placeholder" class="col-lg-2 menu">
+				</div>
+				
+				<!--ragna-->
+				<div id="option_1" class="col-lg-2 menu none">
+					<!--menu options-->
+					<div id="attack">Attack</div>
+					<div id="magecraft">Magecraft</div>
+					<div id="item">Item</div>
+					<div id="run">Run</div>
+				</div>
+
+				<div id="option_2" class="col-lg-2 menu none">
+					<!--menu options-->
+					<div id="attack">Attack</div>
+					<div id="battojutsu">Battojutsu</div>
+					<div id="item">Item</div>
+					<div id="run">Run</div>
+				</div>
+
+				<div id="option_3" class="col-lg-2 menu none">
+					<!--menu options-->
+					<div id="attack">Attack</div>
+					<div id="specialskill">Special Skill</div>
+					<div id="item">Item</div>
+					<div id="run">Run</div>
+				</div>
+
+				<div id="option_4" class="col-lg-2 menu none">
+					<!--menu options-->
+					<div id="attack">Attack</div>
+					<div id="programcode">Program Code</div>
+					<div id="item">Item</div>
+					<div id="run">Run</div>
+				</div>
+
+				<!--ragna attacks-->
+				<div id="magic" class="col-lg-2 menu submenu none">
+					<!--menu options-->
+					<div id="fire" class="Ragna">Fire</div>
+					<div id="water" class="Ragna">Water</div>
+					<div id="air" class="Ragna">Air</div>
+					<div id="earth" class="Ragna">Earth</div>
+				</div>
+				<!--yuzuriha-->
+				<div id="batto" class="col-lg-2 menu submenu none">
+					<!--menu options-->
+					<div id="inazuma" class="Yuzuriha">Inazuma</div>
+					<div id="shuntensatsu" class="Yuzuriha">Shuntensatsu</div>
+					<div id="iaido" class="Yuzuriha">Iaido</div>
+					<div id="ameterasu" class="Yuzuriha">Ameterasu</div>
+				</div>
+				<!--izanagi-->
+				<div id="special"class="col-lg-2 menu submenu none">
+					<!--menu options-->
+					<div id="swordslash" class="Izanagi">Sword Slash</div>
+					<div id="bladebarrage" class="Izanagi">Blade Barrage</div>
+					<div id="pierce" class="Izanagi">Pierce</div>
+					<div id="cutter" class="Izanagi">Cutter</div>
+				</div>
+				<!--justice-->
+				<div id="program" class="col-lg-2 menu submenu none">
+					<!--menu options-->
+					<div id="steelpunch" class="Justice">steel_punch.exe</div>
+					<div id="platinumslash" class="Justice">platinum_slash.exe</div>
+					<div id="titaniumblow" class="Justice">titanium_blow.exe</div>
+					<div id="goldensmash" class="Justice">golden_smash.exe</div>
+				</div>
+
+<!--*********************************************************************-->
+<!--allies-->
+<!--*********************************************************************-->
+				<!--ally section-->
+				<!--Ragna-->
+				<div id="ally" class="col-lg-4 cover">
+
+					<div class="col-lg-4 cover name">
+						<!--name-->
+						<div class="title">Ragna</div>
+						<!--subtitle-->
+						<div class="subtitle">The Bloodedge</div>
+					</div>
+
+					<!--numbers-->
+					<div class="col-lg-3 cover number">
+
+						<!--HP numbers-->
+						<div class="num_HP">
+							<!--HP current-->
+							<span id="HP_ragna" class="number_HP"></span>
+							<span>/</span>
+							<!--HP max-->
+							<span id="HP_ragna_max" class="number_HP"></span>
+						</div>
+
+						<!--MP numbers-->
+						<div class="num_MP">
+							<!--MP current-->
+							<span id="MP_ragna" class="number_MP"></span>
+							<span>/</span>
+							<!--MP max-->
+							<span id="MP_ragna_max" class="number_MP"></span>
+						</div>
+
+					</div>
+
+					<!--lifebar-->
+					<div id="lifebar" class="col-lg-5 cover">
+						<!--HP bar-->
+						<div class="bar">
+							<div id="HP_bar_ragna" class="HP_bar">
+								<!--HP bar progress-->
+								<div class="HP_progress"></div>
+							</div>
+						</div>
+						
+						<!--MP bar-->
+						<div class="bar">
+							<div id="MP_bar_ragna" class="MP_bar">
+							<!--MP bar progress-->
+							<div class="MP_progress"></div>
+						</div>
+						</div>
+						
+					</div>
+
+				</div>
+
+				<!--yuzuriha-->
+				<div id="ally" class="col-lg-4 cover">
+
+					<div class="col-lg-4 cover name">
+						<!--name-->
+						<div class="title">Yuzuriha</div>
+						<!--subtitle-->
+						<div class="subtitle">The Heaven's Sword</div>
+					</div>
+
+					<!--numbers-->
+					<div class="col-lg-3 cover number">
+
+						<!--HP numbers-->
+						<div class="num_HP">
+							<!--HP current-->
+							<span id="HP_yuzuriha" class="number_HP"></span>
+							<span>/</span>
+							<!--HP max-->
+							<span id="HP_yuzuriha_max" class="number_HP"></span>
+						</div>
+
+						<!--MP numbers-->
+						<div class="num_MP">
+							<!--MP current-->
+							<span id="MP_yuzuriha" class="number_MP"></span>
+							<span>/</span>
+							<!--MP max-->
+							<span id="MP_yuzuriha_max" class="number_MP"></span>
+						</div>
+
+					</div>
+
+					<!--lifebar-->
+					<div id="lifebar" class="col-lg-5 cover">
+						<!--HP bar-->
+						<div class="bar">
+							<div id="HP_bar_yuzuriha" class="HP_bar">
+								<!--HP bar progress-->
+								<div class="HP_progress"></div>
+							</div>
+						</div>
+						
+						<!--MP bar-->
+						<div class="bar">
+							<div id="MP_bar_yuzuriha" class="MP_bar">
+							<!--MP bar progress-->
+							<div class="MP_progress"></div>
+						</div>
+						</div>
+						
+					</div>
+
+				</div>
+
+				<!--izanagi-->
+				<div id="ally" class="col-lg-4 cover">
+
+					<div class="col-lg-4 cover name">
+						<!--name-->
+						<div class="title">Izanagi</div>
+						<!--subtitle-->
+						<div class="subtitle">The Shadow</div>
+					</div>
+
+					<!--numbers-->
+					<div class="col-lg-3 cover number">
+
+						<!--HP numbers-->
+						<div class="num_HP">
+							<!--HP current-->
+							<span id="HP_izanagi" class="number_HP"></span>
+							<span>/</span>
+							<!--HP max-->
+							<span id="HP_izanagi_max" class="number_HP"></span>
+						</div>
+
+						<!--MP numbers-->
+						<div class="num_MP">
+							<!--MP current-->
+							<span id="MP_izanagi" class="number_MP"></span>
+							<span>/</span>
+							<!--MP max-->
+							<span id="MP_izanagi_max" class="number_MP"></span>
+						</div>
+
+					</div>
+
+					<!--lifebar-->
+					<div id="lifebar" class="col-lg-5 cover">
+						<!--HP bar-->
+						<div class="bar">
+							<div id="HP_bar_izanagi" class="HP_bar">
+								<!--HP bar progress-->
+								<div class="HP_progress"></div>
+							</div>
+						</div>
+						
+						<!--MP bar-->
+						<div class="bar">
+							<div id="MP_bar_izanagi" class="MP_bar">
+							<!--MP bar progress-->
+							<div class="MP_progress"></div>
+						</div>
+						</div>
+						
+					</div>
+
+				</div>
+
+				<!--justice-->
+				<div id="ally" class="col-lg-4 cover">
+
+					<div class="col-lg-4 cover name">
+						<!--name-->
+						<div class="title">Justice</div>
+						<!--subtitle-->
+						<div class="subtitle">The Lawbringer</div>
+					</div>
+
+					<!--numbers-->
+					<div class="col-lg-3 cover number">
+
+						<!--HP numbers-->
+						<div class="num_HP">
+							<!--HP current-->
+							<span id="HP_justice" class="number_HP"></span>
+							<span>/</span>
+							<!--HP max-->
+							<span id="HP_justice_max" class="number_HP"></span>
+						</div>
+
+						<!--MP numbers-->
+						<div class="num_MP">
+							<!--MP current-->
+							<span id="MP_justice" class="number_MP"></span>
+							<span>/</span>
+							<!--MP max-->
+							<span id="MP_justice_max" class="number_MP"></span>
+						</div>
+
+					</div>
+
+					<!--lifebar-->
+					<div id="lifebar" class="col-lg-5 cover">
+						<!--HP bar-->
+						<div class="bar">
+							<div id="HP_bar_justice" class="HP_bar">
+								<!--HP bar progress-->
+								<div class="HP_progress"></div>
+							</div>
+						</div>
+						
+						<!--MP bar-->
+						<div class="bar">
+							<div id="MP_bar_justice" class="MP_bar">
+							<!--MP bar progress-->
+							<div class="MP_progress"></div>
+						</div>
+						</div>
+						
+					</div>
+
+				</div>
+
+<!--*********************************************************************-->
+<!--end of allies section-->
+<!--*********************************************************************-->
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
