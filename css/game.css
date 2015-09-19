@@ -7,8 +7,191 @@
 
 /*the section where the gifs, animations, and popups will be*/
 #battle{
-	background: gray;
+	/*background: gray;*/
 	height: 75vh;
+}
+#battle:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 1;
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#message{
+	position: absolute;
+	z-index: 100;
+	background: black;
+	color: white;
+	opacity: .9;
+	width: 100%;
+	height: 15vh;
+	text-align: center;
+	border-bottom: 3px solid rgb(60,60,60);
+	/*padding: 20px 0;*/
+}
+#message p{
+	padding: 10px 0;
+	font-size: 30px;
+}
+
+/*attacks*/
+
+#ragna_portrait, #yuzu_attack, #iza_portrait{
+	height:77vh;
+	position:absolute;
+	right:0px;
+	z-index:35;
+}
+#lightbox, #ragna_box, #yuzu_box, #iza_box{
+	width:100%;
+	height: 78vh;
+	position:absolute;
+	right:0px;
+	z-index:30;
+}
+#lightbox{background: rgba(0,0,0,.5);}
+
+#megiddo, #deluge, #zephyr, #tartarus{
+	width: 100%;
+	position: relative;
+	z-index: 25;
+	top: -70%;
+}
+
+#flare, #storm, #wing, #break{
+	height: 78.5vh;
+	position: relative;
+	z-index: 30;
+	opacity: .7;
+	top: -150%;
+}
+#yuzu_box{background: pink;}
+#iza_box{
+	background-image: url("../gifs/attack/slashing.gif");
+	background-size: 77vh;
+}
+#ina, #zuma, #shun, #ten, #satsu, #i, #ai, #do{
+	height:25vh;
+	/*width: auto;*/
+	/*vertical-align: bottom;*/
+	position: relative;
+	margin:auto;
+	z-index:25;
+	top: -80%;
+}
+#ina, #zuma{height: 70vh;}
+#i, #ai, #do{margin-left: 0;}
+#ama, #terasu, #oo, #mikami{
+	position: relative;
+	top: -80%;
+	z-index: 25;
+	width: 24%;
+	height: 100%;
+	float: left;
+}
+#atk_name, #atk_name2, #atk_name3, #atk_name4{
+	position: absolute;
+	top:30%;
+	opacity:.7;
+	z-index: 45;
+	width: 100%;
+}
+#sword, #blade, #pier, #cut{
+	width: 100%;
+	height: 70vh;
+	position: relative;
+	z-index: 25;
+	top: -100%;
+}
+
+#ragna_attack, #yuzu_batto, #iza_attack{
+	position: relative;
+	z-index: 50;
+	margin-top: -50px;
+}
+/*#slashing{
+	position: relative;
+	z-index: 20;
+	margin-top: -100px;
+	width: 80%;
+	height: 77vh;
+}*/
+#ragna_attack{margin-top:-60px;left: 40%;height: 90vh}
+#iza_attack{margin-top:-100px;left: 40%;height: 90vh;}
+
+/*sprites*/
+#enemy_sprite{
+	width:100%;
+	margin-top:-50px;
+	opacity: .7;
+}
+#ally_sprite{}
+
+#enemy_section{position: relative;z-index: 5;}
+#ally_section{
+	/*float: right;*/
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 15;
+	/*display: inline-block;*/
+}
+/*ally sprites*/
+#ragna_sprite{
+	height:200px;
+	display:block;
+	margin-left:20%;
+	margin-top:5%;
+}
+#yuzuriha_sprite{
+	height:250px;
+	display:block;
+	margin-top:-45%;
+	margin-left:23%;
+}
+#izanagi_sprite{
+	height:250px;
+	display:block;
+	margin-top:-40%;
+}
+#justice_sprite{
+	height:250px;
+	display:block;
+	margin-top:-40%;
+	margin-left:150px;
+}
+
+#description{
+	position: absolute;
+	top: 65vh;
+	z-index: 30;
+	background: black;
+	color: white;
+	opacity: .9;
+	width: 100%;
+	height: 10vh;
+	text-align: center;
+	border-bottom: 1px solid rgb(60,60,60);
+	border-top: 3px solid rgb(60,60,60);
+	padding: 5px 0;
+
+}
+#description p{
+	font-size: 20px;
+	display: none;
 }
 
 /*the section where the menu and lifebars etc. will be*/
@@ -29,28 +212,20 @@
 	/*gradient*/
 	height: 25vh;
 	overflow: hidden;
+	position: relative;
+	z-index: 100;
 }
 
 /*enemy name and lifebar*/
-#enemy{
-	height: 50%;
-}
+#enemy{height: 50%;}
 
 /*ally name and lifebar*/
-#ally{
-	height: 25%;
-}
+.ally{height: 25%;}
 
 /*menu*/
 .menu{height: 100%;}
+
 /*the options in the menu, 1-4*/
-
-/*.menu_option{
-	height:25%;
-	text-indent: 20px;
-	border-bottom: 2px solid rgb(40,40,40);
-}*/
-
 .menu div{
 	height:25%;
 	text-indent: 20px;
@@ -60,15 +235,7 @@
 }
 
 /*effects for when you hover on a menu option*/
-
-/*.menu_option:hover{
-	background: black;
-	color: #33AAFF;
-}*/
-
-.menu div:hover{
-	background: black;
-}
+.menu div:hover{background: black;}
 
 #option_1 div:hover{
 	color: #33AAFF;
@@ -117,9 +284,20 @@
 }
 
 /*name section*/
-.name{height: 100%;border-bottom: 1px rgb(60,60,60) solid;}
-.title{height:60%;text-indent:20px;font-size: 1.5em;/*background:red;*/}
-.subtitle{height:40%;text-indent:20px;font-size:.9em;/*background: orange;*/}
+.name{
+	height: 100%;
+	border-bottom: 1px rgb(60,60,60) solid;
+}
+.title{
+	height:60%;
+	text-indent:20px;
+	font-size: 1.5em;
+}
+.subtitle{
+	height:40%;
+	text-indent:20px;
+	font-size:.9em;
+}
 
 
 /*number section*/
