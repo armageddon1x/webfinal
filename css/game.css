@@ -49,13 +49,13 @@
 
 /*attacks*/
 
-#ragna_portrait, #yuzu_attack, #iza_portrait{
+#ragna_portrait, #yuzu_attack, #iza_portrait, #just_portrait{
 	height:77vh;
 	position:absolute;
 	right:0px;
 	z-index:35;
 }
-#lightbox, #ragna_box, #yuzu_box, #iza_box{
+#lightbox, #ragna_box, #yuzu_box, #iza_box, #just_box{
 	width:100%;
 	height: 78vh;
 	position:absolute;
@@ -116,8 +116,41 @@
 	z-index: 25;
 	top: -100%;
 }
+.steel{
+	background: -moz-linear-gradient(45deg, #000000 0%, #000000 30%, #B5F5FF 50%, #000000 70%, #000000 100%); /* ff3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #000000), color-stop(30%, #000000), color-stop(50%, #B5F5FF), color-stop(70%, #000000), color-stop(100%, #000000)); /* safari4+,chrome */
+	background: -webkit-linear-gradient(45deg, #000000 0%, #000000 30%, #B5F5FF 50%, #000000 70%, #000000 100%); /* safari5.1+,chrome10+ */
+	background: -o-linear-gradient(45deg, #000000 0%, #000000 30%, #B5F5FF 50%, #000000 70%, #000000 100%); /* opera 11.10+ */
+	background: -ms-linear-gradient(45deg, #000000 0%, #000000 30%, #B5F5FF 50%, #000000 70%, #000000 100%); /* ie10+ */
+	background: linear-gradient(45deg, #000000 0%, #000000 30%, #B5F5FF 50%, #000000 70%, #000000 100%); /* w3c */
+}
+.plat{
+	background: -moz-linear-gradient(45deg, #000000 0%, #000000 30%, #F5F2FF 50%, #000000 70%, #000000 100%); /* ff3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #000000), color-stop(30%, #000000), color-stop(50%, #F5F2FF), color-stop(70%, #000000), color-stop(100%, #000000)); /* safari4+,chrome */
+	background: -webkit-linear-gradient(45deg, #000000 0%, #000000 30%, #F5F2FF 50%, #000000 70%, #000000 100%); /* safari5.1+,chrome10+ */
+	background: -o-linear-gradient(45deg, #000000 0%, #000000 30%, #F5F2FF 50%, #000000 70%, #000000 100%); /* opera 11.10+ */
+	background: -ms-linear-gradient(45deg, #000000 0%, #000000 30%, #F5F2FF 50%, #000000 70%, #000000 100%); /* ie10+ */
+	background: linear-gradient(45deg, #000000 0%, #000000 30%, #F5F2FF 50%, #000000 70%, #000000 100%); /* w3c */
+}
+.titan{
+	background: -moz-linear-gradient(45deg, #000000 0%, #000000 30%, #89888F 50%, #000000 70%, #000000 100%); /* ff3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #000000), color-stop(30%, #000000), color-stop(50%, #89888F), color-stop(70%, #000000), color-stop(100%, #000000)); /* safari4+,chrome */
+	background: -webkit-linear-gradient(45deg, #000000 0%, #000000 30%, #89888F 50%, #000000 70%, #000000 100%); /* safari5.1+,chrome10+ */
+	background: -o-linear-gradient(45deg, #000000 0%, #000000 30%, #89888F 50%, #000000 70%, #000000 100%); /* opera 11.10+ */
+	background: -ms-linear-gradient(45deg, #000000 0%, #000000 30%, #89888F 50%, #000000 70%, #000000 100%); /* ie10+ */
+	background: linear-gradient(45deg, #000000 0%, #000000 30%, #89888F 50%, #000000 70%, #000000 100%); /* w3c */
+}
+.gold{
+	background: -moz-linear-gradient(45deg, #000000 0%, #000000 30%, #A8C439 50%, #000000 70%, #000000 100%); /* ff3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #000000), color-stop(30%, #000000), color-stop(50%, #A8C439), color-stop(70%, #000000), color-stop(100%, #000000)); /* safari4+,chrome */
+	background: -webkit-linear-gradient(45deg, #000000 0%, #000000 30%, #A8C439 50%, #000000 70%, #000000 100%); /* safari5.1+,chrome10+ */
+	background: -o-linear-gradient(45deg, #000000 0%, #000000 30%, #A8C439 50%, #000000 70%, #000000 100%); /* opera 11.10+ */
+	background: -ms-linear-gradient(45deg, #000000 0%, #000000 30%, #A8C439 50%, #000000 70%, #000000 100%); /* ie10+ */
+	background: linear-gradient(45deg, #000000 0%, #000000 30%, #A8C439 50%, #000000 70%, #000000 100%); /* w3c */
+}
 
-#ragna_attack, #yuzu_batto, #iza_attack{
+
+#ragna_attack, #yuzu_batto, #iza_attack, #just_attack, #beam{
 	position: relative;
 	z-index: 50;
 	margin-top: -50px;
@@ -125,6 +158,9 @@
 
 #ragna_attack{margin-top:-60px;left: 40%;height: 90vh}
 #iza_attack{margin-top:-100px;left: 40%;height: 90vh;}
+#just_attack{float:right;margin-top: 10%;}
+#beam{float:right;width: 50%;}
+
 
 /*sprites*/
 #enemy_sprite{

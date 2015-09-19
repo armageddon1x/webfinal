@@ -298,6 +298,7 @@ $(function(){
 	$("#MP_justice").html(Justice.MP);
 
 	var i=0;
+	var turns=1;
 
 	game();
 	repeat();
@@ -933,6 +934,112 @@ $(function(){
 					$("#iza_box").hide();
 					$("#cut").hide();
 				},5000);
+		};
+
+		//attacks for justice
+		if(attack==="steelpunch"){
+				$("#just_portrait").fadeIn(1500);
+				$("#lightbox").show();
+				setTimeout(function(){
+			      $('#just_portrait').hide();
+			      $("#lightbox").hide();
+					},2050);
+				setTimeout(function(){
+					$("#just_box").fadeIn();
+					$('#just_box').addClass("steel");
+					$("#just_attack").show();
+					$("#just_attack").css("display","inline-block");
+					$("#beam").show();
+					$("#beam").css("display","inline-block");
+				},2050);
+				// setTimeout(function(){
+				// 	$("#cut").css("display","block");
+				// 	},3500);
+				setTimeout(function(){
+					$("#just_attack").attr('src', 'gifs/attack/just_attack.gif');
+					$("#beam").attr('src', 'gifs/attack/two_beams2.gif');
+					$("#just_box").hide();
+					$("#just_attack").hide();
+					$("#beam").hide();
+				},4000);
+		};
+		if(attack==="platinumslash"){
+				$("#just_portrait").fadeIn(1500);
+				$("#lightbox").show();
+				setTimeout(function(){
+			      $('#just_portrait').hide();
+			      $("#lightbox").hide();
+					},2050);
+				setTimeout(function(){
+					$("#just_box").fadeIn();
+					$('#just_box').addClass("plat");
+					$("#just_attack").show();
+					$("#just_attack").css("display","inline-block");
+					$("#beam").show();
+					$("#beam").css("display","inline-block");
+				},2050);
+				// setTimeout(function(){
+				// 	$("#cut").css("display","block");
+				// 	},3500);
+				setTimeout(function(){
+					$("#just_attack").attr('src', 'gifs/attack/just_attack.gif');
+					$("#beam").attr('src', 'gifs/attack/two_beams2.gif');
+					$("#just_box").hide();
+					$("#just_attack").hide();
+					$("#beam").hide();
+				},4000);
+		};
+		if(attack==="titaniumblow"){
+				$("#just_portrait").fadeIn(1500);
+				$("#lightbox").show();
+				setTimeout(function(){
+			      $('#just_portrait').hide();
+			      $("#lightbox").hide();
+					},2050);
+				setTimeout(function(){
+					$("#just_box").fadeIn();
+					$('#just_box').addClass("titan");
+					$("#just_attack").show();
+					$("#just_attack").css("display","inline-block");
+					$("#beam").show();
+					$("#beam").css("display","inline-block");
+				},2050);
+				// setTimeout(function(){
+				// 	$("#cut").css("display","block");
+				// 	},3500);
+				setTimeout(function(){
+					$("#just_attack").attr('src', 'gifs/attack/just_attack.gif');
+					$("#beam").attr('src', 'gifs/attack/two_beams2.gif');
+					$("#just_box").hide();
+					$("#just_attack").hide();
+					$("#beam").hide();
+				},4000);
+		};
+		if(attack==="goldensmash"){
+				$("#just_portrait").fadeIn(1500);
+				$("#lightbox").show();
+				setTimeout(function(){
+			      $('#just_portrait').hide();
+			      $("#lightbox").hide();
+					},2050);
+				setTimeout(function(){
+					$("#just_box").fadeIn();
+					$('#just_box').addClass("gold");
+					$("#just_attack").show();
+					$("#just_attack").css("display","inline-block");
+					$("#beam").show();
+					$("#beam").css("display","inline-block");
+				},2050);
+				// setTimeout(function(){
+				// 	$("#cut").css("display","block");
+				// 	},3500);
+				setTimeout(function(){
+					$("#just_attack").attr('src', 'gifs/attack/just_attack.gif');
+					$("#beam").attr('src', 'gifs/attack/two_beams2.gif');
+					$("#just_box").hide();
+					$("#just_attack").hide();
+					$("#beam").hide();
+				},4000);
 		};
 	}
 	//function for repeating the dragon attacks
