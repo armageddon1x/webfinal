@@ -467,7 +467,7 @@ $(function(){
 				Dragon.HP=Dragon.HP-ATK_DMG;
 
 				//message
-				message(Ragna.action, Ragna.skill, current_attacks[attack_person], current_attacks[attack_display]);
+				message(Ragna.action, Ragna.skill, Ragna.skill_ruby, current_attacks[attack_person], current_attacks[attack_display]);
 				//animation
 				animation(attack_name);
 			};
@@ -482,7 +482,7 @@ $(function(){
 				Dragon.HP=Dragon.HP-ATK_DMG;
 
 				//message
-				message(Yuzuriha.action, Yuzuriha.skill, current_attacks[attack_person], current_attacks[attack_display]);
+				message(Yuzuriha.action, Yuzuriha.skill, Yuzuriha.skill_ruby, current_attacks[attack_person], current_attacks[attack_display]);
 				//animation
 				animation(attack_name);
 
@@ -498,7 +498,7 @@ $(function(){
 				Dragon.HP=Dragon.HP-ATK_DMG;
 
 				//message
-				message(Izanagi.action, Izanagi.skill, current_attacks[attack_person], current_attacks[attack_display]);
+				message(Izanagi.action, Izanagi.skill, Izanagi.skill_ruby, current_attacks[attack_person], current_attacks[attack_display]);
 				//animation
 				animation(attack_name);
 			};
@@ -513,7 +513,7 @@ $(function(){
 				Dragon.HP=Dragon.HP-ATK_DMG;
 
 				//message
-				message(Justice.action, Justice.skill, current_attacks[attack_person], current_attacks[attack_display]);
+				message(Justice.action, Justice.skill, Justice.skill_ruby, current_attacks[attack_person], current_attacks[attack_display]);
 				//animation
 				animation(attack_name);
 			};
@@ -521,9 +521,9 @@ $(function(){
 		});
 	};
 	//function for attack message
-	function message(action, skill, attack, display){
+	function message(action, skill, attack, attack_sub, display){
 		$("#message").show();
-		$("#message p").html(action+skill+"<br>"+attack+": "+display+"!!!");
+		$("#message p").html(action+skill+": "+attack_sub+"!!<br>"+attack+": "+display+"!!!");
 		setTimeout(function(){
       $("#message").hide();
 		},2050);	

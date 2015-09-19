@@ -122,13 +122,7 @@
 	z-index: 50;
 	margin-top: -50px;
 }
-/*#slashing{
-	position: relative;
-	z-index: 20;
-	margin-top: -100px;
-	width: 80%;
-	height: 77vh;
-}*/
+
 #ragna_attack{margin-top:-60px;left: 40%;height: 90vh}
 #iza_attack{margin-top:-100px;left: 40%;height: 90vh;}
 
@@ -140,7 +134,10 @@
 }
 #ally_sprite{}
 
-#enemy_section{position: relative;z-index: 5;}
+#enemy_section{
+	position: relative;
+	z-index: 5;
+}
 #ally_section{
 	/*float: right;*/
 	position: absolute;
@@ -149,6 +146,7 @@
 	z-index: 15;
 	/*display: inline-block;*/
 }
+
 /*ally sprites*/
 #ragna_sprite{
 	height:200px;
@@ -339,8 +337,17 @@
 }
 
 
-.enemy_number_HP{color: red;position: absolute;bottom: 50%;}
-.enemy_number_MP{color: purple;position: absolute;bottom: 0;}
+.enemy_number_HP{
+	color: red;
+	position: absolute;
+	bottom: 50%;
+}
+.enemy_number_MP{
+	color: purple;
+	position: absolute;
+	bottom: 0;
+}
+
 /*lifebar section*/
 #lifebar{
 	height: 100%;
